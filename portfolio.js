@@ -1,195 +1,10 @@
 /* ═══════════════════════════════════════════════════
    OPSIS — Portfolio Page
-   Filter + Lightbox
+   Data loaded from /data/portfolio.json (managed via Decap CMS)
    ═══════════════════════════════════════════════════ */
 
 (() => {
   'use strict';
-
-  /* ─── Project data ─────────────────────────────── */
-  const PROJECTS = [
-    // ── SKILT ─────────────────────────────────────
-    {
-      id: 1, cat: 'skilt', size: 'feature',
-      title: 'Fasadeskilt — Haugen Transport',
-      client: 'Haugen Transport AS, Trysil',
-      desc: 'Komplett fasadeskilt i aluminium med LED-bakgrunnslys. Produsert og montert av Opsis. Størrelse 3×0,8 m, UV-bestandig folie.',
-      img: 'https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=900&h=700&fit=crop',
-    },
-    {
-      id: 2, cat: 'skilt', size: 'standard',
-      title: 'Roll-ups — Trysil Kommune',
-      client: 'Trysil Kommune',
-      desc: 'Serie på 12 roll-ups for informasjonskampanje. Trykk på 85×200 cm banner med aluminiumsfot.',
-      img: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=700&h=500&fit=crop',
-    },
-    {
-      id: 3, cat: 'skilt', size: 'wide',
-      title: 'Banere og utendørsskilt — Innlandet AS',
-      client: 'Innlandet AS',
-      desc: 'Storformat utendørsbanere i spunpolyester, dobbeltsidig trykk. Festeanordning for fasade og vegg.',
-      img: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900&h=500&fit=crop',
-    },
-    {
-      id: 4, cat: 'skilt', size: 'standard',
-      title: 'Lysreklame — Din Bedrift',
-      client: 'Din Bedrift AS',
-      desc: 'Tett LED-boks i aluminium, 5 mm akrylfront med digital direkte print. Natteffekt med indirekte LED-belysning.',
-      img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&h=500&fit=crop',
-    },
-    {
-      id: 5, cat: 'skilt', size: 'standard',
-      title: 'Infoskilt — Næringspark',
-      client: 'Trysil Næringspark',
-      desc: 'Komplett skiltsystem for næringspark. Pylon, veiledningsskilt og portskilt. ALU-dibond med folie.',
-      img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=700&h=500&fit=crop',
-    },
-
-    // ── BILFOLIERING ──────────────────────────────
-    {
-      id: 6, cat: 'bil', size: 'wide',
-      title: 'Helbilfoliering — Firmabil',
-      client: 'Haugen Transport AS',
-      desc: 'Helbilfoliering av to Volvo-biler med reklametrykk. Fargefast UV-bestandig folie, 5 års garanti. Ferdig montert på 2 dager.',
-      img: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=900&h=500&fit=crop',
-    },
-    {
-      id: 7, cat: 'bil', size: 'standard',
-      title: 'Dekals og delfoliering — Varebil',
-      client: 'Privatkunde, Trysil',
-      desc: 'Sidedekals og bakrute-folie på Ford Transit. Kontaktfilm i hvit med digital print.',
-      img: 'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=700&h=500&fit=crop',
-    },
-    {
-      id: 8, cat: 'bil', size: 'standard',
-      title: 'Flåtefoliering — 6 biler',
-      client: 'Lokal Servicebedrift AS',
-      desc: 'Profilering av komplett kjøretøyflåte. Enhetlig design på 6 biler — takboks, sider og bakluke.',
-      img: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=700&h=500&fit=crop',
-    },
-    {
-      id: 9, cat: 'bil', size: 'standard',
-      title: 'Båtfoliering — Sommerprosjekt',
-      client: 'Privatkunde',
-      desc: 'Foliering av sportsbåt i carbo-look. Mattsvart med blå detaljstriper. Marinegodkjent folie.',
-      img: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=700&h=500&fit=crop',
-    },
-
-    // ── PROFILKLÆR ────────────────────────────────
-    {
-      id: 10, cat: 'klaer', size: 'wide',
-      title: 'Teamklær — Trysil Bygg',
-      client: 'Trysil Bygg AS',
-      desc: '45 sett med profilklær: softshell-jakker, arbeids-t-skjorter og caps. Brodert logo på bryst og erm. Levert på 10 arbeidsdager.',
-      img: 'https://images.unsplash.com/photo-1604644401890-0bd678c83788?w=900&h=500&fit=crop',
-    },
-    {
-      id: 11, cat: 'klaer', size: 'standard',
-      title: 'Hoodie-kolleksjon',
-      client: 'Lokal idrettsklubb',
-      desc: 'Organikhoodie med silktrykk på rygg og bryst. Opplag 80 stk. Pantone-fargetilpasset logo.',
-      img: 'https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=700&h=500&fit=crop',
-    },
-    {
-      id: 12, cat: 'klaer', size: 'standard',
-      title: 'T-skjorte — Sommerkampanje',
-      client: 'Turistbedrift, Innlandet',
-      desc: '200 stk. promotiont-skjorter for sommerkampanje. Digital direktetrykk, 4 farger.',
-      img: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=700&h=500&fit=crop',
-    },
-    {
-      id: 13, cat: 'klaer', size: 'standard',
-      title: 'Arbeidstøy — Verksted',
-      client: 'Industribedrift AS',
-      desc: 'Arbeidsdrakter, bukser og hansker med reflekstriper og brodert firmalogo. EN ISO 11611-sertifisert.',
-      img: 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=700&h=500&fit=crop',
-    },
-
-    // ── GRAFISK DESIGN ────────────────────────────
-    {
-      id: 14, cat: 'design', size: 'feature',
-      title: 'Komplett merkevarebygging',
-      client: 'Startup, Trysil',
-      desc: 'Logotyp, fargepalette, typografi, visittkort, brevpapir, e-postsignatur og enkel brandguide. Levert som komplett designpakke.',
-      img: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=900&h=700&fit=crop',
-    },
-    {
-      id: 15, cat: 'design', size: 'standard',
-      title: 'Logo — Restaurant',
-      client: 'Fjellkafeen, Trysil',
-      desc: 'Logodesign og visuell profil for ny restaurant. Konsept, skisser og 3 fullstendige forslag. Leveranse inkl. alle filformater.',
-      img: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=700&h=500&fit=crop',
-    },
-    {
-      id: 16, cat: 'design', size: 'standard',
-      title: 'Reklamemateriell — Messestand',
-      client: 'Produksjonsbedrift AS',
-      desc: 'Fullstendig grafisk pakke for messestand: vegger, brosjyrer, prisliste, powerpoint-mal og sosiale medier-maler.',
-      img: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=700&h=500&fit=crop',
-    },
-    {
-      id: 17, cat: 'design', size: 'standard',
-      title: 'Visuell identitet — Idrettslag',
-      client: 'Trysil IL',
-      desc: 'Ny visuell identitet for idrettslag. Logo, drakter, banere og sosiale medier-maler i klubbens farger.',
-      img: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=700&h=500&fit=crop',
-    },
-
-    // ── TRYKKSAKER ────────────────────────────────
-    {
-      id: 18, cat: 'trykk', size: 'wide',
-      title: 'Brosjyre og prisliste — Eiendom',
-      client: 'Eiendomsmegler, Innlandet',
-      desc: 'A4-brosjyre, 12 sider, 4/4 farge, 150g Matt-bestrøket papir. Opplag 1500. Design og trykk levert på 5 arbeidsdager.',
-      img: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=900&h=500&fit=crop',
-    },
-    {
-      id: 19, cat: 'trykk', size: 'standard',
-      title: 'Visittkort — Advokat',
-      client: 'Advokatkontor, Hamar',
-      desc: 'Premium visittkort 600g, ensfarget sortbakgrunn med preget gull-folie. Opplag 500.',
-      img: 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=700&h=500&fit=crop',
-    },
-    {
-      id: 20, cat: 'trykk', size: 'standard',
-      title: 'Plakater — Arrangement',
-      client: 'Trysil Festivalen',
-      desc: 'Serietrykk A1 og A2 plakater for lokalt arrangement. UV-lakkert overflate, sterk fargegjengivelse.',
-      img: 'https://images.unsplash.com/photo-1518655048521-f130df041f66?w=700&h=500&fit=crop',
-    },
-
-    // ── INTERIØRDEKOR ─────────────────────────────
-    {
-      id: 21, cat: 'dekor', size: 'wide',
-      title: 'Kontordekorasjon — Veggfolie',
-      client: 'Teknologibedrift AS',
-      desc: 'Komplett dekorasjon av 3 kontorplaner. Vegggrafik, frosted glass-folie på skillevegger og logovegg i resepsjonen.',
-      img: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=900&h=500&fit=crop',
-    },
-    {
-      id: 22, cat: 'dekor', size: 'standard',
-      title: 'Glassdekals — Showroom',
-      client: 'Bilforhandler, Innlandet',
-      desc: 'Frosted vinyl-folie med logomønster på alle glassfasader. Montert over helg uten driftsforstyrrelser.',
-      img: 'https://images.unsplash.com/photo-1497366412874-3415097a27e7?w=700&h=500&fit=crop',
-    },
-
-    // ── MESSEUTSTYR ───────────────────────────────
-    {
-      id: 23, cat: 'messe', size: 'wide',
-      title: 'Komplett messestand — Bygg Reis Deg',
-      client: 'Entreprenørbedrift AS',
-      desc: 'Komplett messestand 6×3 m: bakvegg, sidevegger, møbler, roll-ups og brosjyreholder. Montert og demontert av Opsis.',
-      img: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=900&h=500&fit=crop',
-    },
-    {
-      id: 24, cat: 'messe', size: 'standard',
-      title: 'Tekstil-backdrop — Stand',
-      client: 'Helseklinikk AS',
-      desc: 'Stoff-backdrop 3×2 m med sub-limation print. Sammenleggbar aluminiumsramme. Enkel montering på 15 minutter.',
-      img: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=700&h=500&fit=crop',
-    },
-  ];
 
   /* ─── Category labels ──────────────────────────── */
   const CAT_LABELS = {
@@ -203,9 +18,10 @@
   };
 
   /* ─── State ────────────────────────────────────── */
+  let PROJECTS     = [];
   let activeCat    = 'all';
   let lbIndex      = 0;
-  let filteredList = PROJECTS.slice();
+  let filteredList = [];
 
   /* ─── DOM refs ─────────────────────────────────── */
   const grid      = document.getElementById('pfGrid');
@@ -239,7 +55,6 @@
     filteredList.forEach((proj, idx) => {
       const el = document.createElement('div');
       el.className = `pf-item pf-item--${proj.size || 'standard'} pf-item--animating`;
-      el.dataset.id  = proj.id;
       el.dataset.idx = idx;
       el.style.animationDelay = `${idx * 0.04}s`;
 
@@ -264,6 +79,17 @@
 
       el.addEventListener('click', () => openLightbox(idx));
       grid.appendChild(el);
+    });
+  }
+
+  /* ─── Update filter counts ─────────────────────── */
+  function updateCounts() {
+    const countAll = document.getElementById('count-all');
+    if (countAll) countAll.textContent = PROJECTS.length;
+
+    Object.keys(CAT_LABELS).forEach(cat => {
+      const el = document.getElementById(`count-${cat}`);
+      if (el) el.textContent = PROJECTS.filter(p => p.cat === cat).length;
     });
   }
 
@@ -303,19 +129,13 @@
   }
 
   lbClose?.addEventListener('click', closeLightbox);
-
-  lbOverlay?.addEventListener('click', e => {
-    if (e.target === lbOverlay) closeLightbox();
-  });
-
+  lbOverlay?.addEventListener('click', e => { if (e.target === lbOverlay) closeLightbox(); });
   lbPrev?.addEventListener('click', () => {
     if (lbIndex > 0) { lbIndex--; showProject(filteredList[lbIndex]); }
   });
-
   lbNext?.addEventListener('click', () => {
     if (lbIndex < filteredList.length - 1) { lbIndex++; showProject(filteredList[lbIndex]); }
   });
-
   document.addEventListener('keydown', e => {
     if (!lbOverlay.classList.contains('lb-overlay--visible')) return;
     if (e.key === 'Escape')      closeLightbox();
@@ -323,24 +143,23 @@
     if (e.key === 'ArrowRight' && lbIndex < filteredList.length - 1) { lbIndex++; showProject(filteredList[lbIndex]); }
   });
 
-  /* ─── Update filter counts ─────────────────────── */
-  function updateCounts() {
-    const all = PROJECTS.length;
-    document.getElementById('count-all').textContent   = all;
-    Object.keys(CAT_LABELS).forEach(cat => {
-      const el = document.getElementById(`count-${cat}`);
-      if (el) el.textContent = PROJECTS.filter(p => p.cat === cat).length;
-    });
-  }
-
-  /* ─── Init ─────────────────────────────────────── */
-  updateCounts();
-  render();
-
-  /* ─── Sticky filter bar shadow on scroll ──────── */
+  /* ─── Sticky filter bar shadow ─────────────────── */
   window.addEventListener('scroll', () => {
     const bar = document.getElementById('filterBar');
     if (bar) bar.classList.toggle('pf-filter-bar--shadow', window.scrollY > 200);
   }, { passive: true });
+
+  /* ─── Load data from JSON, then init ───────────── */
+  fetch('/data/portfolio.json')
+    .then(r => r.json())
+    .then(data => {
+      PROJECTS = data.projects || [];
+      updateCounts();
+      render();
+    })
+    .catch(() => {
+      // Fallback: show error in grid
+      if (grid) grid.innerHTML = '<p style="padding:2rem;color:#999">Kunne ikke laste prosjekter.</p>';
+    });
 
 })();

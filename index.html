@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <link rel="stylesheet" href="catalog.css" />
 </head>
 <body>
@@ -611,7 +612,9 @@
         </div>
       </div>
 
-      <form class="contact__form" id="quoteForm" novalidate>
+      <form class="contact__form" id="quoteForm" name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+        <input type="hidden" name="form-name" value="kontakt" />
+        <p style="display:none"><label>Ikke fyll inn: <input name="bot-field" /></label></p>
         <div class="form-row">
           <div class="form-group">
             <label for="name">Navn *</label>

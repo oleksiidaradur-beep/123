@@ -1,0 +1,73 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+locale: "nb_NO"
+
+collections:
+
+  # ── PORTEFØLJE ─────────────────────────────────────────────────────────────
+  - name: "portfolio"
+    label: "Portefølje"
+    label_singular: "Prosjekt"
+    files:
+      - name: "projects"
+        label: "Alle prosjekter"
+        file: "data/portfolio.json"
+        fields:
+          - name: projects
+            label: Prosjekter
+            label_singular: Prosjekt
+            widget: list
+            summary: "{{fields.title}} — {{fields.client}}"
+            fields:
+              - { label: "ID",      name: id,     widget: number,  hint: "Unik tallkode — bare øk med 1 fra siste" }
+              - label: "Kategori"
+                name: cat
+                widget: select
+                options:
+                  - { label: "Skilt & storformat", value: "skilt" }
+                  - { label: "Bilfoliering",       value: "bil"   }
+                  - { label: "Profilklær",          value: "klaer" }
+                  - { label: "Grafisk design",      value: "design"}
+                  - { label: "Trykksaker",          value: "trykk" }
+                  - { label: "Interiørdekor",       value: "dekor" }
+                  - { label: "Messeutstyr",         value: "messe" }
+              - label: "Kortstørrelse"
+                name: size
+                widget: select
+                default: "standard"
+                options:
+                  - { label: "Standard (1×1)",        value: "standard" }
+                  - { label: "Bred (2×1)",            value: "wide"     }
+                  - { label: "Høy (1×2)",             value: "tall"     }
+                  - { label: "Feature/Stor (2×2)",    value: "feature"  }
+              - { label: "Prosjekttittel",  name: title,  widget: string }
+              - { label: "Kundenavn",       name: client, widget: string }
+              - { label: "Beskrivelse",     name: desc,   widget: text   }
+              - label: "Bilde"
+                name: img
+                widget: image
+                hint: "Last opp bilde eller lim inn URL fra Unsplash"
+                choose_url: true
+                media_library:
+                  config:
+                    multiple: false
+
+  # ── INNSTILLINGER ──────────────────────────────────────────────────────────
+  - name: "settings"
+    label: "Nettstedsinnstillinger"
+    files:
+      - name: "contact"
+        label: "Kontaktinformasjon"
+        file: "data/settings.json"
+        fields:
+          - { label: "Telefon",         name: phone,   widget: string }
+          - { label: "E-post",          name: email,   widget: string }
+          - { label: "Adresse",         name: address, widget: string }
+          - { label: "Åpningstider",    name: hours,   widget: string }
+          - { label: "Facebook URL",    name: facebook, widget: string }
+          - { label: "Instagram URL",   name: instagram, widget: string }
