@@ -61,29 +61,25 @@ collections:
   - name: "pricing"
     label: "Priser"
     files:
-
-      - name: "skilt"
-        label: "Skilt og storformat"
+      - name: "alle_priser"
+        label: "Alle priser"
         file: "data/pricing.json"
         fields:
+
           - name: skilt
             label: "Skilt og storformat"
             widget: object
             fields:
-              - { label: "Monteringskostnad (NOK)", name: setup, widget: number, value_type: int }
+              - { label: "Monteringskostnad (NOK)", name: setup, widget: number }
               - label: "Materialer"
                 name: materials
                 widget: list
                 summary: "{{fields.label}} — {{fields.pricePerM2}} NOK/m²"
                 fields:
-                  - { label: "ID",           name: id,          widget: string }
-                  - { label: "Navn",         name: label,       widget: string }
-                  - { label: "Pris per m²",  name: pricePerM2,  widget: number, value_type: int }
+                  - { label: "ID",          name: id,         widget: string }
+                  - { label: "Navn",        name: label,      widget: string }
+                  - { label: "Pris per m²", name: pricePerM2, widget: number }
 
-      - name: "produkter_priser"
-        label: "Produkter og klær"
-        file: "data/pricing.json"
-        fields:
           - name: produkter
             label: "Produkter og klær"
             widget: object
@@ -93,27 +89,23 @@ collections:
                 widget: list
                 summary: "{{fields.label}} — fra {{fields.base}} NOK"
                 fields:
-                  - { label: "ID",         name: id,    widget: string }
-                  - { label: "Navn",       name: label, widget: string }
-                  - { label: "Basispris",  name: base,  widget: number, value_type: int }
+                  - { label: "ID",        name: id,    widget: string }
+                  - { label: "Navn",      name: label, widget: string }
+                  - { label: "Basispris", name: base,  widget: number }
               - label: "Trykkmetoder"
                 name: methods
                 widget: list
                 summary: "{{fields.label}}"
                 fields:
-                  - { label: "ID",          name: id,    widget: string }
-                  - { label: "Navn",        name: label, widget: string }
-                  - { label: "Multiplikator (1.0 = normal)", name: mult, widget: number, value_type: float }
+                  - { label: "ID",             name: id,    widget: string }
+                  - { label: "Navn",           name: label, widget: string }
+                  - { label: "Multiplikator",  name: mult,  widget: number }
 
-      - name: "arbeidstoy_priser"
-        label: "Arbeidstøy"
-        file: "data/pricing.json"
-        fields:
           - name: arbeidstoy
             label: "Arbeidstøy"
             widget: object
             fields:
-              - { label: "Trykk basispris (NOK/stk)", name: printBase, widget: number, value_type: int }
+              - { label: "Trykk basispris (NOK/stk)", name: printBase, widget: number }
               - label: "Plagg"
                 name: items
                 widget: list
@@ -121,20 +113,16 @@ collections:
                 fields:
                   - { label: "ID",        name: id,    widget: string }
                   - { label: "Navn",      name: label, widget: string }
-                  - { label: "Basispris", name: base,  widget: number, value_type: int }
+                  - { label: "Basispris", name: base,  widget: number }
               - label: "Merker"
                 name: brands
                 widget: list
                 summary: "{{fields.label}}"
                 fields:
-                  - { label: "ID",          name: id,    widget: string }
-                  - { label: "Navn",        name: label, widget: string }
-                  - { label: "Multiplikator", name: mult, widget: number, value_type: float }
+                  - { label: "ID",            name: id,    widget: string }
+                  - { label: "Navn",          name: label, widget: string }
+                  - { label: "Multiplikator", name: mult,  widget: number }
 
-      - name: "trykksaker_priser"
-        label: "Trykksaker"
-        file: "data/pricing.json"
-        fields:
           - name: trykksaker
             label: "Trykksaker"
             widget: object
@@ -146,20 +134,16 @@ collections:
                 fields:
                   - { label: "ID",               name: id,      widget: string }
                   - { label: "Navn",             name: label,   widget: string }
-                  - { label: "Pris per 100 stk", name: base100, widget: number, value_type: int }
+                  - { label: "Pris per 100 stk", name: base100, widget: number }
               - label: "Papir/finish"
                 name: papers
                 widget: list
                 summary: "{{fields.label}}"
                 fields:
-                  - { label: "ID",           name: id,    widget: string }
-                  - { label: "Navn",         name: label, widget: string }
-                  - { label: "Multiplikator", name: mult, widget: number, value_type: float }
+                  - { label: "ID",            name: id,    widget: string }
+                  - { label: "Navn",          name: label, widget: string }
+                  - { label: "Multiplikator", name: mult,  widget: number }
 
-      - name: "grafisk_priser"
-        label: "Grafisk design"
-        file: "data/pricing.json"
-        fields:
           - name: grafisk
             label: "Grafisk design"
             widget: object
@@ -169,21 +153,17 @@ collections:
                 widget: list
                 summary: "{{fields.label}} — {{fields.min}}–{{fields.max}} NOK"
                 fields:
-                  - { label: "ID",          name: id,    widget: string }
-                  - { label: "Navn",        name: label, widget: string }
-                  - { label: "Pris fra",    name: min,   widget: number, value_type: int }
-                  - { label: "Pris til",    name: max,   widget: number, value_type: int }
+                  - { label: "ID",       name: id,    widget: string }
+                  - { label: "Navn",     name: label, widget: string }
+                  - { label: "Pris fra", name: min,   widget: number }
+                  - { label: "Pris til", name: max,   widget: number }
 
-      - name: "dekor_priser"
-        label: "Interiørdekor"
-        file: "data/pricing.json"
-        fields:
           - name: dekor
             label: "Interiørdekor"
             widget: object
             fields:
-              - { label: "Startgebyr (NOK)",      name: setup,        widget: number, value_type: int }
-              - { label: "Montering per m² (NOK)", name: installation, widget: number, value_type: int }
+              - { label: "Startgebyr (NOK)",       name: setup,        widget: number }
+              - { label: "Montering per m² (NOK)",  name: installation, widget: number }
               - label: "Materialer"
                 name: materials
                 widget: list
@@ -191,31 +171,23 @@ collections:
                 fields:
                   - { label: "ID",          name: id,         widget: string }
                   - { label: "Navn",        name: label,      widget: string }
-                  - { label: "Pris per m²", name: pricePerM2, widget: number, value_type: int }
+                  - { label: "Pris per m²", name: pricePerM2, widget: number }
 
-      - name: "bilfoliering_priser"
-        label: "Bilfoliering"
-        file: "data/pricing.json"
-        fields:
           - name: bilfoliering
             label: "Bilfoliering"
             widget: object
             fields:
-              - { label: "Foliepris per m² (NOK)",    name: pricePerM2,   widget: number, value_type: int }
-              - { label: "Monteringspris per m² (NOK)", name: installPerM2, widget: number, value_type: int }
+              - { label: "Foliepris per m² (NOK)",     name: pricePerM2,   widget: number }
+              - { label: "Monteringspris per m² (NOK)", name: installPerM2, widget: number }
               - label: "Kjøretøytyper"
                 name: vehicles
                 widget: list
                 summary: "{{fields.label}} — {{fields.fullArea}} m²"
                 fields:
-                  - { label: "ID",          name: id,       widget: string }
-                  - { label: "Navn",        name: label,    widget: string }
-                  - { label: "Fullt areal (m²)", name: fullArea, widget: number, value_type: float }
+                  - { label: "ID",               name: id,       widget: string }
+                  - { label: "Navn",             name: label,    widget: string }
+                  - { label: "Fullt areal (m²)", name: fullArea, widget: number }
 
-      - name: "messe_priser"
-        label: "Messeutstyr"
-        file: "data/pricing.json"
-        fields:
           - name: messe
             label: "Messeutstyr"
             widget: object
@@ -227,8 +199,8 @@ collections:
                 fields:
                   - { label: "ID",       name: id,    widget: string }
                   - { label: "Navn",     name: label, widget: string }
-                  - { label: "Pris fra", name: min,   widget: number, value_type: int }
-                  - { label: "Pris til", name: max,   widget: number, value_type: int }
+                  - { label: "Pris fra", name: min,   widget: number }
+                  - { label: "Pris til", name: max,   widget: number }
 
   # ── PROFILKLÆR KATALOG ─────────────────────────────────────────────────────
   - name: "catalog"
