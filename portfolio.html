@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portefølje — Opsis AS</title>
+  <meta name="description" content="Se utvalgte prosjekter fra Opsis AS — skilt, bilfoliering, profilklær, grafisk design, trykksaker og messeutstyr levert til kunder i Trysil og Innlandet." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="portfolio.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════ -->
+  <header class="navbar navbar--scrolled" id="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <span class="logo-name">OPSIS</span>
+      </a>
+      <nav class="navbar__nav" id="navMenu">
+        <a href="index.html#tjenester">Tjenester</a>
+        <a href="index.html#katalog">Katalog</a>
+        <a href="portfolio.html" class="nav-active">Portefølje</a>
+        <a href="index.html#om-oss">Om oss</a>
+        <a href="index.html#kontakt" class="btn btn--outline btn--sm">Få tilbud</a>
+      </nav>
+      <button class="navbar__burger" id="burger" aria-label="Åpne meny">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       PAGE HERO
+  ═══════════════════════════════════════════ -->
+  <section class="pf-hero">
+    <div class="pf-hero__bg">
+      <div class="pf-hero__bg-gradient"></div>
+    </div>
+    <div class="container pf-hero__inner">
+      <span class="badge badge--light pf-hero__badge">Portefølje</span>
+      <h1 class="pf-hero__title">
+        Prosjekter vi er<br />
+        <span class="pf-hero__title-highlight">stolte av</span>
+      </h1>
+      <p class="pf-hero__sub">
+        Fra fasadeskilt i Trysil til bilfoliering på nasjonale flåter —
+        her er et utvalg av hva vi har levert siden 2014.
+      </p>
+      <div class="pf-hero__stats">
+        <div class="pf-hero__stat"><strong>500+</strong><span>prosjekter</span></div>
+        <div class="pf-hero__stat-sep"></div>
+        <div class="pf-hero__stat"><strong>10+</strong><span>år erfaring</span></div>
+        <div class="pf-hero__stat-sep"></div>
+        <div class="pf-hero__stat"><strong>7</strong><span>tjenestetyper</span></div>
+        <div class="pf-hero__stat-sep"></div>
+        <div class="pf-hero__stat"><strong>4.9★</strong><span>kundetilfredshet</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FILTER BAR
+  ═══════════════════════════════════════════ -->
+  <div class="pf-filter-bar" id="filterBar">
+    <div class="container">
+      <div class="pf-filters" id="pfFilters">
+        <button class="pf-filter active" data-cat="all">
+          <span>Alle</span>
+          <span class="pf-filter__count" id="count-all">24</span>
+        </button>
+        <button class="pf-filter" data-cat="skilt">
+          <span>Skilt & storformat</span>
+          <span class="pf-filter__count" id="count-skilt">5</span>
+        </button>
+        <button class="pf-filter" data-cat="bil">
+          <span>Bilfoliering</span>
+          <span class="pf-filter__count" id="count-bil">4</span>
+        </button>
+        <button class="pf-filter" data-cat="klaer">
+          <span>Profilklær</span>
+          <span class="pf-filter__count" id="count-klaer">4</span>
+        </button>
+        <button class="pf-filter" data-cat="design">
+          <span>Grafisk design</span>
+          <span class="pf-filter__count" id="count-design">4</span>
+        </button>
+        <button class="pf-filter" data-cat="trykk">
+          <span>Trykksaker</span>
+          <span class="pf-filter__count" id="count-trykk">3</span>
+        </button>
+        <button class="pf-filter" data-cat="dekor">
+          <span>Interiørdekor</span>
+          <span class="pf-filter__count" id="count-dekor">2</span>
+        </button>
+        <button class="pf-filter" data-cat="messe">
+          <span>Messeutstyr</span>
+          <span class="pf-filter__count" id="count-messe">2</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       PROJECT GRID
+  ═══════════════════════════════════════════ -->
+  <main class="pf-main">
+    <div class="container">
+      <div class="pf-grid" id="pfGrid">
+        <!-- Rendered by portfolio.js -->
+      </div>
+      <div class="pf-empty" id="pfEmpty" style="display:none">
+        <p>Ingen prosjekter i denne kategorien ennå.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       CTA BAND
+  ═══════════════════════════════════════════ -->
+  <section class="pf-cta">
+    <div class="container pf-cta__inner">
+      <div class="pf-cta__text">
+        <h2>Vil du ha noe lignende?</h2>
+        <p>Send oss en beskrivelse — vi sender tilbud innen 2 timer.</p>
+      </div>
+      <div class="pf-cta__actions">
+        <a href="index.html#kontakt" class="btn btn--primary btn--lg">Få gratis tilbud</a>
+        <a href="tel:+4762456000" class="btn btn--outline-white btn--lg">Ring oss nå</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="navbar__logo">
+          <span class="logo-name">OPSIS</span>
+        </a>
+        <p>Kreativ print og profilering.<br />Trysil · Innlandet · Norge</p>
+        <div class="footer__social">
+          <a href="https://www.facebook.com/OpsisTrysil" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__links">
+        <h4>Tjenester</h4>
+        <ul>
+          <li><a href="index.html#tjenester">Skilt og storformat</a></li>
+          <li><a href="index.html#tjenester">Produkter med trykk</a></li>
+          <li><a href="index.html#tjenester">Trykksaker</a></li>
+          <li><a href="index.html#tjenester">Grafisk design</a></li>
+          <li><a href="index.html#tjenester">Bilfoliering</a></li>
+          <li><a href="index.html#tjenester">Messeutstyr</a></li>
+        </ul>
+      </div>
+      <div class="footer__links">
+        <h4>Selskapet</h4>
+        <ul>
+          <li><a href="index.html#om-oss">Om Opsis</a></li>
+          <li><a href="portfolio.html">Portefølje</a></li>
+          <li><a href="index.html#kontakt">Kontakt</a></li>
+          <li><a href="index.html#kontakt">Få tilbud</a></li>
+        </ul>
+      </div>
+      <div class="footer__contact">
+        <h4>Kontakt oss</h4>
+        <address>
+          <p>Storvegen 18C<br />2420 Trysil</p>
+          <p><a href="tel:+4762456000">+47 624 56 000</a></p>
+          <p><a href="mailto:post@opsis.no">post@opsis.no</a></p>
+          <p>Man–fre: 08:00–16:00</p>
+        </address>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p>© 2025 Opsis AS — Org.nr. 997 677 420</p>
+        <div class="footer__legal">
+          <a href="#">Personvern</a>
+          <a href="#">Cookiepolicy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════
+       LIGHTBOX
+  ═══════════════════════════════════════════ -->
+  <div class="lb-overlay" id="lbOverlay" aria-modal="true" role="dialog">
+    <button class="lb-close" id="lbClose" aria-label="Lukk">&times;</button>
+    <button class="lb-nav lb-nav--prev" id="lbPrev" aria-label="Forrige">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <button class="lb-nav lb-nav--next" id="lbNext" aria-label="Neste">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+    <div class="lb-card" id="lbCard">
+      <div class="lb-img-wrap">
+        <img id="lbImg" src="" alt="" />
+      </div>
+      <div class="lb-info">
+        <span class="lb-tag" id="lbTag"></span>
+        <h2 class="lb-title" id="lbTitle"></h2>
+        <p class="lb-client" id="lbClient"></p>
+        <p class="lb-desc" id="lbDesc"></p>
+        <div class="lb-actions">
+          <a href="index.html#kontakt" class="btn btn--primary">Få lignende tilbud</a>
+          <span class="lb-counter" id="lbCounter"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+  <script src="portfolio.js"></script>
+</body>
+</html>
