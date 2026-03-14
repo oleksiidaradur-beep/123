@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Opsis AS — Kreativ print og profilering i Trysil</title>
+  <meta name="description" content="Opsis AS leverer vывески, bilfoliering, profilklær, grafisk design og trykksaker i Trysil og Innlandet. Full syklus fra idé til ferdig produkt." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════ -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="/" class="navbar__logo">
+        <span class="logo-mark">O</span>
+        <span class="logo-text">psis<span class="logo-dot">.</span></span>
+      </a>
+
+      <nav class="navbar__nav" id="navMenu">
+        <a href="#tjenester">Tjenester</a>
+        <a href="#portefolje">Portefølje</a>
+        <a href="#om-oss">Om oss</a>
+        <a href="#kontakt" class="btn btn--outline btn--sm">Få tilbud</a>
+      </nav>
+
+      <button class="navbar__burger" id="burger" aria-label="Åpne meny">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero__bg-grid"></div>
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <span class="badge badge--accent">Trysil · Innlandet · Norge</span>
+        <h1 class="hero__title">
+          Fra idé til<br />
+          <span class="gradient-text">ferdig produkt</span><br />
+          — under ett tak
+        </h1>
+        <p class="hero__subtitle">
+          Opsis leverer vывески, bilfoliering, profilklær, grafisk design og trykksaker til bedrifter i Innlandet og hele Norge. Kreativt. Presist. Fullstendig.
+        </p>
+        <div class="hero__actions">
+          <a href="#kontakt" class="btn btn--primary btn--lg">
+            Få gratis tilbud
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#portefolje" class="btn btn--ghost btn--lg">Se våre arbeider</a>
+        </div>
+        <div class="hero__stats">
+          <div class="stat">
+            <strong>10+</strong>
+            <span>år i bransjen</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <strong>500+</strong>
+            <span>leverte prosjekter</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <strong>8</strong>
+            <span>tjenesteområder</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__visual">
+        <div class="hero__mockup">
+          <div class="mockup-card mockup-card--1">
+            <div class="mockup-icon">🪟</div>
+            <span>Skilt & storformat</span>
+          </div>
+          <div class="mockup-card mockup-card--2">
+            <div class="mockup-icon">🚗</div>
+            <span>Bilfoliering</span>
+          </div>
+          <div class="mockup-card mockup-card--3">
+            <div class="mockup-icon">👕</div>
+            <span>Profilklær</span>
+          </div>
+          <div class="mockup-card mockup-card--4">
+            <div class="mockup-icon">🎨</div>
+            <span>Grafisk design</span>
+          </div>
+          <div class="mockup-blob"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__scroll-hint">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       LOGO BAND (client trust)
+  ═══════════════════════════════════════════ -->
+  <section class="logo-band">
+    <div class="container">
+      <p class="logo-band__label">Betrodd av lokale og nasjonale bedrifter</p>
+      <div class="logo-band__track">
+        <div class="logo-band__logos">
+          <span class="client-logo">Univern</span>
+          <span class="client-logo">Björnkläder</span>
+          <span class="client-logo">Sievi</span>
+          <span class="client-logo">Din Bedrift</span>
+          <span class="client-logo">Trysil Kommune</span>
+          <span class="client-logo">Innlandet AS</span>
+          <!-- Duplicate for infinite scroll -->
+          <span class="client-logo">Univern</span>
+          <span class="client-logo">Björnkläder</span>
+          <span class="client-logo">Sievi</span>
+          <span class="client-logo">Din Bedrift</span>
+          <span class="client-logo">Trysil Kommune</span>
+          <span class="client-logo">Innlandet AS</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SERVICES
+  ═══════════════════════════════════════════ -->
+  <section class="services" id="tjenester">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Tjenester</span>
+        <h2>Alt du trenger<br /><span class="gradient-text">på ett sted</span></h2>
+        <p>Vi tilbyr et komplett spekter av print- og profileringstjenester — fra konsept til ferdig montering.</p>
+      </div>
+
+      <div class="services__grid">
+
+        <article class="service-card service-card--featured">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="6" y="10" width="36" height="28" rx="3"/>
+              <path d="M14 18h20M14 24h14M14 30h10"/>
+            </svg>
+          </div>
+          <h3>Skilt og storformat print</h3>
+          <p>Fasadeskilt, lysreklame, banere, roll-ups og digitale trykk i alle størrelser. Vi produserer og monterer.</p>
+          <a href="#kontakt" class="service-card__link">
+            Få tilbud
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+              <ellipse cx="24" cy="30" rx="16" ry="8"/>
+              <path d="M8 30V18a16 8 0 0 1 32 0v12"/>
+              <circle cx="24" cy="20" r="5"/>
+            </svg>
+          </div>
+          <h3>Produkter og klær med trykk</h3>
+          <p>Profilartikler, reklameartikler og klær med bedriftens logo — fra 1 stk til store opplag.</p>
+          <a href="#kontakt" class="service-card__link">Få tilbud <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M8 34c0-8 4-14 16-14s16 6 16 14"/>
+              <path d="M24 20V10M18 14l6-6 6 6"/>
+            </svg>
+          </div>
+          <h3>Arbeidstøy med trykk</h3>
+          <p>Merker som Univern, Björnkläder og Sievi — kvalitetsbekleding med ditt logo for hele teamet.</p>
+          <a href="#kontakt" class="service-card__link">Få tilbud <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="8" y="12" width="32" height="24" rx="2"/>
+              <path d="M16 20h16M16 28h10"/>
+              <circle cx="36" cy="20" r="4"/>
+            </svg>
+          </div>
+          <h3>Trykksaker</h3>
+          <p>Visittkort, brosjyrer, plakater, kataloger og mer — digital og offsettrykk med presise farger.</p>
+          <a href="#kontakt" class="service-card__link">Få tilbud <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="24" cy="24" r="16"/>
+              <path d="M24 8v4M24 36v4M8 24h4M36 24h4"/>
+              <circle cx="24" cy="24" r="6"/>
+            </svg>
+          </div>
+          <h3>Grafisk design</h3>
+          <p>Logo, merkevarebygging, profil og alt grafisk materiell — fra konsept til ferdig design klar for trykk.</p>
+          <a href="#kontakt" class="service-card__link">Få tilbud <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="8" y="14" width="32" height="20" rx="2"/>
+              <path d="M14 22h20M14 28h12"/>
+            </svg>
+          </div>
+          <h3>Interiørdekor</h3>
+          <p>Veggfolie, mattfolie, transparent folie og dekorative trykk — gjør lokalet til en del av merkevaren din.</p>
+          <a href="#kontakt" class="service-card__link">Få tilbud <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M6 34l10-8 8 6 8-10 10 12"/>
+              <rect x="4" y="10" width="40" height="28" rx="3"/>
+            </svg>
+          </div>
+          <h3>Bilfoliering</h3>
+          <p>Hel- og delfoliering av firmabiler, reklametrykk på kjøretøy. Profesjonell montering og UV-bestandig folie.</p>
+          <a href="#kontakt" class="service-card__link">Få tilbud <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M10 36V20l14-8 14 8v16"/>
+              <rect x="18" y="28" width="12" height="8"/>
+              <path d="M24 12v8"/>
+            </svg>
+          </div>
+          <h3>Messeutstyr</h3>
+          <p>Messevegger, roll-ups, flagg, bannere og komplette messestands — imponér på neste messe.</p>
+          <a href="#kontakt" class="service-card__link">Få tilbud <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       PROCESS
+  ═══════════════════════════════════════════ -->
+  <section class="process">
+    <div class="container">
+      <div class="section-header section-header--light">
+        <span class="badge badge--light">Slik jobber vi</span>
+        <h2>Fra idé til<br /><span class="gradient-text">ferdig resultat</span></h2>
+        <p>En enkel prosess som gir deg full oversikt — uten overraskelser.</p>
+      </div>
+
+      <div class="process__steps">
+        <div class="process-step">
+          <div class="process-step__number">01</div>
+          <div class="process-step__content">
+            <h3>Ta kontakt</h3>
+            <p>Fortell oss hva du trenger — via skjema, telefon eller drop-in på verkstedet i Trysil.</p>
+          </div>
+        </div>
+        <div class="process-step__arrow">→</div>
+        <div class="process-step">
+          <div class="process-step__number">02</div>
+          <div class="process-step__content">
+            <h3>Vi lager tilbud</h3>
+            <p>Innen 2 timer sender vi et konkret tilbud med pris, materiale og leveringstid.</p>
+          </div>
+        </div>
+        <div class="process-step__arrow">→</div>
+        <div class="process-step">
+          <div class="process-step__number">03</div>
+          <div class="process-step__content">
+            <h3>Design og godkjenning</h3>
+            <p>Våre designere lager korrektur — du godkjenner og vi starter produksjon.</p>
+          </div>
+        </div>
+        <div class="process-step__arrow">→</div>
+        <div class="process-step">
+          <div class="process-step__number">04</div>
+          <div class="process-step__content">
+            <h3>Levering og montering</h3>
+            <p>Vi leverer ferdig produkt — og monterer der det trengs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       PORTFOLIO PREVIEW
+  ═══════════════════════════════════════════ -->
+  <section class="portfolio" id="portefolje">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Portefølje</span>
+        <h2>Utvalgte<br /><span class="gradient-text">prosjekter</span></h2>
+        <p>Et lite utvalg av hva vi har levert til fornøyde kunder i Innlandet og resten av Norge.</p>
+      </div>
+
+      <div class="portfolio__filters">
+        <button class="filter-btn filter-btn--active" data-filter="all">Alle</button>
+        <button class="filter-btn" data-filter="skilt">Skilt</button>
+        <button class="filter-btn" data-filter="bil">Bilfoliering</button>
+        <button class="filter-btn" data-filter="klaer">Klær</button>
+        <button class="filter-btn" data-filter="design">Grafisk design</button>
+      </div>
+
+      <div class="portfolio__grid">
+        <div class="portfolio-item" data-category="skilt">
+          <div class="portfolio-item__img portfolio-item__img--1">
+            <div class="portfolio-item__overlay">
+              <span class="portfolio-item__tag">Skilt & storformat</span>
+              <h4>Fasadeskilt — Lokal bedrift</h4>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item portfolio-item--wide" data-category="bil">
+          <div class="portfolio-item__img portfolio-item__img--2">
+            <div class="portfolio-item__overlay">
+              <span class="portfolio-item__tag">Bilfoliering</span>
+              <h4>Helbilfoliering — Firmabil</h4>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="design">
+          <div class="portfolio-item__img portfolio-item__img--3">
+            <div class="portfolio-item__overlay">
+              <span class="portfolio-item__tag">Grafisk design</span>
+              <h4>Logo og merkevare</h4>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="klaer">
+          <div class="portfolio-item__img portfolio-item__img--4">
+            <div class="portfolio-item__overlay">
+              <span class="portfolio-item__tag">Profilklær</span>
+              <h4>Arbeidstøy med logo</h4>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item portfolio-item--wide" data-category="skilt">
+          <div class="portfolio-item__img portfolio-item__img--5">
+            <div class="portfolio-item__overlay">
+              <span class="portfolio-item__tag">Messeutstyr</span>
+              <h4>Komplett messestand</h4>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="design">
+          <div class="portfolio-item__img portfolio-item__img--6">
+            <div class="portfolio-item__overlay">
+              <span class="portfolio-item__tag">Trykksaker</span>
+              <h4>Brosjyre og visittkort</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio__cta">
+        <a href="#kontakt" class="btn btn--primary btn--lg">Se hele porteføljen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       WHY OPSIS
+  ═══════════════════════════════════════════ -->
+  <section class="why-us" id="om-oss">
+    <div class="container why-us__inner">
+      <div class="why-us__content">
+        <span class="badge">Hvorfor Opsis</span>
+        <h2>Lokal ekspertise.<br /><span class="gradient-text">Full service.</span></h2>
+        <p class="why-us__lead">Vi er en liten bedrift med stor leveransekapasitet. Alle tjenester under ett tak betyr kortere kommunikasjonslinjer, raskere levering og bedre resultat for deg.</p>
+
+        <div class="why-us__points">
+          <div class="point">
+            <div class="point__icon point__icon--green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <div>
+              <h4>Alt under ett tak</h4>
+              <p>Fra idé og design til produksjon og montering — én leverandør, null koordineringsstress.</p>
+            </div>
+          </div>
+          <div class="point">
+            <div class="point__icon point__icon--blue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <div>
+              <h4>Tilbud innen 2 timer</h4>
+              <p>Ingen lange ventetider — vi responderer raskt og leverer konkrete priser uten forbehold.</p>
+            </div>
+          </div>
+          <div class="point">
+            <div class="point__icon point__icon--orange">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <h4>Lokal tilstedeværelse</h4>
+              <p>Vi er her — i Trysil. Drop-in, befaring og møter på dine premisser.</p>
+            </div>
+          </div>
+          <div class="point">
+            <div class="point__icon point__icon--purple">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <div>
+              <h4>10+ år erfaring</h4>
+              <p>Siden 2014 har vi levert over 500 prosjekter til fornøyde kunder i hele Innlandet.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-us__visual">
+        <div class="testimonial-stack">
+          <div class="testimonial-card testimonial-card--main">
+            <div class="testimonial-stars">★★★★★</div>
+            <p>"Opsis leverte fasadeskilt og bilfoliering for hele vår flåte. Profesjonelt resultat, rask levering og god kommunikasjon gjennom hele prosessen."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">A</div>
+              <div>
+                <strong>Anders Haugen</strong>
+                <span>Daglig leder, Haugen Transport AS</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card testimonial-card--secondary">
+            <div class="testimonial-stars">★★★★★</div>
+            <p>"Veldig fornøyd med profilklærne og designhjelpen. Kom tilbake for tredje gang!"</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">M</div>
+              <div>
+                <strong>Mari Solberg</strong>
+                <span>HR-ansvarlig, Trysil Bygg</span>
+              </div>
+            </div>
+          </div>
+          <div class="why-us__stat-badge">
+            <strong>4.9 / 5</strong>
+            <span>Kundetilfredshet</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CTA BAND
+  ═══════════════════════════════════════════ -->
+  <section class="cta-band">
+    <div class="container cta-band__inner">
+      <div>
+        <h2>Klar til å starte?</h2>
+        <p>Beskriv prosjektet ditt — vi sender tilbud innen 2 timer.</p>
+      </div>
+      <div class="cta-band__actions">
+        <a href="#kontakt" class="btn btn--white btn--lg">Få gratis tilbud</a>
+        <a href="tel:+4762456000" class="btn btn--outline-white btn--lg">Ring oss nå</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CONTACT / QUOTE FORM
+  ═══════════════════════════════════════════ -->
+  <section class="contact" id="kontakt">
+    <div class="container contact__inner">
+
+      <div class="contact__info">
+        <span class="badge">Kontakt</span>
+        <h2>Få ditt<br /><span class="gradient-text">gratis tilbud</span></h2>
+        <p>Fyll ut skjemaet, så tar vi kontakt innen 2 arbeidstimer med et konkret tilbud.</p>
+
+        <div class="contact__details">
+          <div class="contact-detail">
+            <div class="contact-detail__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <strong>Adresse</strong>
+              <span>Storvegen 18C, 2420 Trysil</span>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.37 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.9a16 16 0 0 0 6.29 6.29l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <strong>Telefon</strong>
+              <span>+47 624 56 000</span>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <strong>E-post</strong>
+              <span>post@opsis.no</span>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <div>
+              <strong>Åpningstider</strong>
+              <span>Man–fre 08:00–16:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact__form" id="quoteForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Navn *</label>
+            <input type="text" id="name" name="name" placeholder="Ditt navn" required />
+          </div>
+          <div class="form-group">
+            <label for="company">Bedrift</label>
+            <input type="text" id="company" name="company" placeholder="Bedriftsnavn" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">E-post *</label>
+            <input type="email" id="email" name="email" placeholder="din@epost.no" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Telefon</label>
+            <input type="tel" id="phone" name="phone" placeholder="+47 000 00 000" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="service">Tjeneste *</label>
+          <select id="service" name="service" required>
+            <option value="" disabled selected>Velg tjeneste...</option>
+            <option value="skilt">Skilt og storformat print</option>
+            <option value="produkter">Produkter og klær med trykk</option>
+            <option value="arbeidstoy">Arbeidstøy med trykk</option>
+            <option value="trykksaker">Trykksaker</option>
+            <option value="grafisk">Grafisk design</option>
+            <option value="dekor">Interiørdekor</option>
+            <option value="bilfoliering">Bilfoliering</option>
+            <option value="messe">Messeutstyr</option>
+            <option value="annet">Annet</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="quantity">Antall / opplag</label>
+            <input type="text" id="quantity" name="quantity" placeholder="f.eks. 100 stk" />
+          </div>
+          <div class="form-group">
+            <label for="deadline">Ønsket leveringstid</label>
+            <input type="text" id="deadline" name="deadline" placeholder="f.eks. innen 2 uker" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Beskriv prosjektet *</label>
+          <textarea id="message" name="message" rows="4" placeholder="Fortell oss hva du trenger — jo mer detaljer, jo bedre tilbud kan vi gi deg." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--primary btn--lg btn--full">
+          Send forespørsel — gratis og uforpliktende
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+
+        <p class="form-note">Vi svarer innen 2 arbeidstimer. Ingen binding — bare et konkret tilbud.</p>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="/" class="navbar__logo">
+          <span class="logo-mark">O</span>
+          <span class="logo-text">psis<span class="logo-dot">.</span></span>
+        </a>
+        <p>Kreativ print og profilering.<br />Trysil · Innlandet · Norge</p>
+        <div class="footer__social">
+          <a href="https://www.facebook.com/OpsisTrysil" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__links">
+        <h4>Tjenester</h4>
+        <ul>
+          <li><a href="#tjenester">Skilt og storformat</a></li>
+          <li><a href="#tjenester">Produkter med trykk</a></li>
+          <li><a href="#tjenester">Arbeidstøy</a></li>
+          <li><a href="#tjenester">Trykksaker</a></li>
+          <li><a href="#tjenester">Grafisk design</a></li>
+          <li><a href="#tjenester">Bilfoliering</a></li>
+          <li><a href="#tjenester">Messeutstyr</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__links">
+        <h4>Selskapet</h4>
+        <ul>
+          <li><a href="#om-oss">Om Opsis</a></li>
+          <li><a href="#portefolje">Portefølje</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+          <li><a href="#kontakt">Få tilbud</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__contact">
+        <h4>Kontakt oss</h4>
+        <address>
+          <p>Storvegen 18C<br />2420 Trysil</p>
+          <p><a href="tel:+4762456000">+47 624 56 000</a></p>
+          <p><a href="mailto:post@opsis.no">post@opsis.no</a></p>
+          <p>Man–fre: 08:00–16:00</p>
+        </address>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container">
+        <p>© 2025 Opsis AS — Org.nr. 997 677 420</p>
+        <div class="footer__legal">
+          <a href="#">Personvern</a>
+          <a href="#">Cookiepolicy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════
+       COOKIE BANNER
+  ═══════════════════════════════════════════ -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-banner__content">
+      <p>Vi bruker informasjonskapsler for å forbedre din opplevelse på nettstedet. <a href="#">Les mer</a></p>
+      <div class="cookie-banner__actions">
+        <button class="btn btn--outline btn--sm" id="cookieDecline">Bare nødvendige</button>
+        <button class="btn btn--primary btn--sm" id="cookieAccept">Godta alle</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
