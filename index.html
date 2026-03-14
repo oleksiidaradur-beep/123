@@ -19,8 +19,7 @@
   <header class="navbar" id="navbar">
     <div class="container navbar__inner">
       <a href="/" class="navbar__logo">
-        <span class="logo-mark">O</span>
-        <span class="logo-text">psis<span class="logo-dot">.</span></span>
+        <span class="logo-name">OPSIS</span>
       </a>
 
       <nav class="navbar__nav" id="navMenu">
@@ -48,30 +47,6 @@
       <div class="hero__bg-orb hero__bg-orb--2"></div>
       <div class="hero__bg-orb hero__bg-orb--3"></div>
       <div class="hero__bg-noise"></div>
-    </div>
-
-    <!-- Floating service badges -->
-    <div class="hero__floats" aria-hidden="true">
-      <div class="hero__float hero__float--1">
-        <span class="float-icon">🪟</span>
-        <span>Skilt</span>
-      </div>
-      <div class="hero__float hero__float--2">
-        <span class="float-icon">🚗</span>
-        <span>Bilfoliering</span>
-      </div>
-      <div class="hero__float hero__float--3">
-        <span class="float-icon">👕</span>
-        <span>Profilklær</span>
-      </div>
-      <div class="hero__float hero__float--4">
-        <span class="float-icon">🎨</span>
-        <span>Design</span>
-      </div>
-      <div class="hero__float hero__float--5">
-        <span class="float-icon">🖨️</span>
-        <span>Trykk</span>
-      </div>
     </div>
 
     <div class="container hero__inner">
@@ -182,6 +157,9 @@
       <div class="services__grid">
 
         <article class="service-card service-card--featured">
+          <div class="service-card__visual">
+            <img src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=800&h=300&fit=crop" alt="Skilt og storformat print" loading="lazy">
+          </div>
           <div class="service-card__number">01</div>
           <div class="service-card__icon">
             <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -200,40 +178,29 @@
         </article>
 
         <article class="service-card">
+          <div class="service-card__visual">
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&h=240&fit=crop" alt="Klær og produkter med trykk" loading="lazy">
+          </div>
           <div class="service-card__number">02</div>
           <div class="service-card__icon">
             <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-              <ellipse cx="24" cy="30" rx="16" ry="8"/>
-              <path d="M8 30V18a16 8 0 0 1 32 0v12"/>
-              <circle cx="24" cy="20" r="5"/>
+              <path d="M16 6l-8 10v26h24V16l-8-10z"/>
+              <path d="M16 6c0 0 2 4 8 4s8-4 8-4"/>
             </svg>
           </div>
-          <h3>Produkter og klær med trykk</h3>
-          <p>Profilartikler, reklameartikler og klær med bedriftens logo — fra 1 stk til store opplag.</p>
+          <h3>Klær og profilprodukter med trykk</h3>
+          <p>Profilklær, reklameartikler og arbeidstøy med logo — T-skjorter, jakker, caps og mer, fra 1 stk til store opplag.</p>
           <div class="service-card__actions">
             <button class="btn btn--service-primary calc-trigger" data-service="produkter">Beregn pris og bestill <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-            <a href="#katalog" class="service-card__link--catalog">Se klærkatalog</a>
+            <a href="#katalog" class="service-card__link--catalog">Se klærkatalog →</a>
           </div>
         </article>
 
         <article class="service-card">
+          <div class="service-card__visual">
+            <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=600&h=240&fit=crop" alt="Trykksaker" loading="lazy">
+          </div>
           <div class="service-card__number">03</div>
-          <div class="service-card__icon">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M8 34c0-8 4-14 16-14s16 6 16 14"/>
-              <path d="M24 20V10M18 14l6-6 6 6"/>
-            </svg>
-          </div>
-          <h3>Arbeidstøy med trykk</h3>
-          <p>Merker som Univern, Björnkläder og Sievi — kvalitetsbekleding med ditt logo for hele teamet.</p>
-          <div class="service-card__actions">
-            <button class="btn btn--service-primary calc-trigger" data-service="arbeidstoy">Beregn pris og bestill <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-            <a href="#katalog" class="service-card__link--catalog">Se klærkatalog</a>
-          </div>
-        </article>
-
-        <article class="service-card">
-          <div class="service-card__number">04</div>
           <div class="service-card__icon">
             <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
               <rect x="8" y="12" width="32" height="24" rx="2"/>
@@ -249,7 +216,10 @@
         </article>
 
         <article class="service-card">
-          <div class="service-card__number">05</div>
+          <div class="service-card__visual">
+            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=240&fit=crop" alt="Grafisk design" loading="lazy">
+          </div>
+          <div class="service-card__number">04</div>
           <div class="service-card__icon">
             <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
               <circle cx="24" cy="24" r="16"/>
@@ -265,13 +235,16 @@
         </article>
 
         <article class="service-card">
+          <div class="service-card__visual">
+            <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&h=240&fit=crop" alt="Interiørdekor" loading="lazy">
+          </div>
+          <div class="service-card__number">05</div>
           <div class="service-card__icon">
             <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
               <rect x="8" y="14" width="32" height="20" rx="2"/>
               <path d="M14 22h20M14 28h12"/>
             </svg>
           </div>
-          <div class="service-card__number">06</div>
           <h3>Interiørdekor</h3>
           <p>Veggfolie, mattfolie, transparent folie og dekorative trykk — gjør lokalet til en del av merkevaren din.</p>
           <div class="service-card__actions">
@@ -280,7 +253,10 @@
         </article>
 
         <article class="service-card">
-          <div class="service-card__number">07</div>
+          <div class="service-card__visual">
+            <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600&h=240&fit=crop" alt="Bilfoliering" loading="lazy">
+          </div>
+          <div class="service-card__number">06</div>
           <div class="service-card__icon">
             <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M6 34l10-8 8 6 8-10 10 12"/>
@@ -295,6 +271,10 @@
         </article>
 
         <article class="service-card">
+          <div class="service-card__visual">
+            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=240&fit=crop" alt="Messeutstyr" loading="lazy">
+          </div>
+          <div class="service-card__number">07</div>
           <div class="service-card__icon">
             <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M10 36V20l14-8 14 8v16"/>
@@ -302,7 +282,6 @@
               <path d="M24 12v8"/>
             </svg>
           </div>
-          <div class="service-card__number">08</div>
           <h3>Messeutstyr</h3>
           <p>Messevegger, roll-ups, flagg, bannere og komplette messestands — imponér på neste messe.</p>
           <div class="service-card__actions">
@@ -336,13 +315,6 @@
             <button class="filter-tab" data-cat="caps">Caps</button>
             <button class="filter-tab" data-cat="tilbehor">Tilbehør</button>
           </div>
-          <div class="brand-pills" id="brandPills">
-            <button class="brand-pill active" data-brand="all">Alle merker</button>
-            <button class="brand-pill" data-brand="univern">Univern</button>
-            <button class="brand-pill" data-brand="bjornklader">Björnkläder</button>
-            <button class="brand-pill" data-brand="sievi">Sievi</button>
-            <button class="brand-pill" data-brand="neutral">Neutral</button>
-          </div>
         </div>
       </div>
 
@@ -355,25 +327,6 @@
       </div>
     </div>
 
-    <!-- Inquiry drawer -->
-    <div class="inquiry-drawer" id="inquiryDrawer">
-      <div class="inquiry-drawer__header">
-        <h4>Din forespørsel</h4>
-        <span class="inquiry-badge" id="inquiryCount">0</span>
-        <button class="inquiry-drawer__close" id="inquiryClose">&times;</button>
-      </div>
-      <ul class="inquiry-list" id="inquiryList"></ul>
-      <div class="inquiry-drawer__footer">
-        <button class="btn btn--primary btn--full" id="sendInquiryBtn">Send forespørsel</button>
-      </div>
-    </div>
-
-    <!-- Floating inquiry button -->
-    <button class="inquiry-fab" id="inquiryFab" style="display:none">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-      Forespørsel
-      <span class="inquiry-fab__count" id="fabCount">0</span>
-    </button>
   </section>
 
   <!-- ═══════════════════════════════════════════
@@ -783,8 +736,7 @@
     <div class="container footer__inner">
       <div class="footer__brand">
         <a href="/" class="navbar__logo">
-          <span class="logo-mark">O</span>
-          <span class="logo-text">psis<span class="logo-dot">.</span></span>
+          <span class="logo-name">OPSIS</span>
         </a>
         <p>Kreativ print og profilering.<br />Trysil · Innlandet · Norge</p>
         <div class="footer__social">
@@ -913,29 +865,32 @@
         <button class="modal__close" id="mockupClose" aria-label="Lukk">&times;</button>
       </div>
       <div class="modal__body mockup-layout">
-        <div class="mockup-canvas-wrap">
+
+        <!-- Photo + canvas overlay -->
+        <div class="mockup-photo-wrap">
+          <img id="mockupBgImg"
+            src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=480&h=540&fit=crop"
+            alt="Plagg" loading="lazy">
           <canvas id="mockupCanvas" width="480" height="540"></canvas>
+          <div class="mockup-photo-hint">Dra logoen for å flytte den</div>
         </div>
+
         <div class="mockup-controls">
-          <div class="mockup-control-group">
-            <label>Plaggfarge</label>
-            <div class="color-swatches" id="clothingColors">
-              <button class="color-swatch active" data-color="#FFFFFF" style="background:#FFFFFF" title="Hvit"></button>
-              <button class="color-swatch" data-color="#1a1d23" style="background:#1a1d23" title="Sort"></button>
-              <button class="color-swatch" data-color="#0057FF" style="background:#0057FF" title="Blå"></button>
-              <button class="color-swatch" data-color="#E63946" style="background:#E63946" title="Rød"></button>
-              <button class="color-swatch" data-color="#2D6A4F" style="background:#2D6A4F" title="Grønn"></button>
-              <button class="color-swatch" data-color="#F4A261" style="background:#F4A261" title="Oransje"></button>
-            </div>
-          </div>
+
+          <!-- Garment type -->
           <div class="mockup-control-group">
             <label>Plagtype</label>
             <div class="garment-btns" id="garmentBtns">
               <button class="garment-btn active" data-garment="tshirt">T-skjorte</button>
               <button class="garment-btn" data-garment="hoodie">Hoodie</button>
               <button class="garment-btn" data-garment="polo">Polo</button>
+              <button class="garment-btn" data-garment="jakke">Jakke</button>
+              <button class="garment-btn" data-garment="caps">Caps</button>
+              <button class="garment-btn" data-garment="bukse">Bukse</button>
             </div>
           </div>
+
+          <!-- Placement -->
           <div class="mockup-control-group">
             <label>Logoposisjon</label>
             <div class="placement-btns" id="placementBtns">
@@ -943,8 +898,11 @@
               <button class="placement-btn" data-placement="front-full">Midt foran</button>
               <button class="placement-btn" data-placement="back">Rygg</button>
               <button class="placement-btn" data-placement="left-sleeve">V. erme</button>
+              <button class="placement-btn" data-placement="right-sleeve">H. erme</button>
             </div>
           </div>
+
+          <!-- Logo upload -->
           <div class="mockup-control-group">
             <label>Last opp logo</label>
             <label class="file-upload-btn" for="logoUpload">
@@ -953,11 +911,13 @@
             </label>
             <input type="file" id="logoUpload" accept="image/*" style="display:none">
           </div>
+
+          <!-- Text -->
           <div class="mockup-control-group">
             <label>Eller skriv tekst</label>
             <input type="text" id="mockupText" class="mockup-text-input" placeholder="Bedriftsnavn / slagord...">
             <div class="text-options">
-              <input type="color" id="textColor" value="#1a1d23" title="Tekstfarge">
+              <input type="color" id="textColor" value="#ffffff" title="Tekstfarge">
               <select id="textSize">
                 <option value="18">Liten</option>
                 <option value="26" selected>Medium</option>
@@ -965,17 +925,41 @@
               </select>
             </div>
           </div>
+
+          <!-- Logo size -->
           <div class="mockup-control-group">
             <label>Logostørrelse</label>
             <input type="range" id="logoSize" min="30" max="220" value="90" class="range-slider">
           </div>
+
+          <!-- Quantity -->
+          <div class="mockup-control-group">
+            <label>Antall stk</label>
+            <div class="qty-control">
+              <button class="qty-btn" id="mockupQtyMinus">−</button>
+              <span class="qty-value" id="mockupQtyVal">1</span>
+              <button class="qty-btn" id="mockupQtyPlus">+</button>
+            </div>
+          </div>
+
+          <!-- Actions -->
           <div class="mockup-actions">
             <button class="btn btn--ghost btn--sm" id="clearMockup">Nullstill</button>
-            <button class="btn btn--primary" id="downloadMockup">
+            <button class="btn btn--ghost btn--sm" id="downloadMockup">
               Last ned PNG
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             </button>
           </div>
+          <div class="mockup-cart-actions">
+            <button class="btn btn--primary btn--full" id="mockupAddToCart">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              Legg i kurv
+            </button>
+            <button class="btn btn--outline btn--full" id="mockupGoToCart">
+              Gå til bestilling →
+            </button>
+          </div>
+
         </div>
       </div>
     </div>
