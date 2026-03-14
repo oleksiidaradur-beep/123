@@ -38,72 +38,107 @@
   </header>
 
   <!-- ═══════════════════════════════════════════
-       HERO
+       HERO — full-viewport dark cinematic
   ═══════════════════════════════════════════ -->
-  <section class="hero">
-    <div class="hero__bg-grid"></div>
+  <section class="hero hero--dark" id="hero">
+    <!-- Animated background layers -->
+    <div class="hero__bg">
+      <div class="hero__bg-gradient"></div>
+      <div class="hero__bg-orb hero__bg-orb--1"></div>
+      <div class="hero__bg-orb hero__bg-orb--2"></div>
+      <div class="hero__bg-orb hero__bg-orb--3"></div>
+      <div class="hero__bg-noise"></div>
+    </div>
+
+    <!-- Floating service badges -->
+    <div class="hero__floats" aria-hidden="true">
+      <div class="hero__float hero__float--1">
+        <span class="float-icon">🪟</span>
+        <span>Skilt</span>
+      </div>
+      <div class="hero__float hero__float--2">
+        <span class="float-icon">🚗</span>
+        <span>Bilfoliering</span>
+      </div>
+      <div class="hero__float hero__float--3">
+        <span class="float-icon">👕</span>
+        <span>Profilklær</span>
+      </div>
+      <div class="hero__float hero__float--4">
+        <span class="float-icon">🎨</span>
+        <span>Design</span>
+      </div>
+      <div class="hero__float hero__float--5">
+        <span class="float-icon">🖨️</span>
+        <span>Trykk</span>
+      </div>
+    </div>
+
     <div class="container hero__inner">
       <div class="hero__content">
-        <span class="badge badge--accent">Trysil · Innlandet · Norge</span>
+
+        <!-- Eyebrow -->
+        <div class="hero__eyebrow">
+          <span class="hero__eyebrow-dot"></span>
+          <span>Trysil · Innlandet · Norge</span>
+        </div>
+
+        <!-- Main headline -->
         <h1 class="hero__title">
-          Fra idé til<br />
-          <span class="gradient-text">ferdig produkt</span><br />
-          — under ett tak
+          <span class="hero__title-line hero__title-line--1">Din merkevare.</span>
+          <span class="hero__title-line hero__title-line--2">
+            <span class="hero__title-highlight">Overalt</span> du ser.
+          </span>
+          <span class="hero__title-line hero__title-line--3">Under ett tak.</span>
         </h1>
+
         <p class="hero__subtitle">
-          Opsis leverer vывески, bilfoliering, profilklær, grafisk design og trykksaker til bedrifter i Innlandet og hele Norge. Kreativt. Presist. Fullstendig.
+          Fra logotyp og profilklær til fasadeskilt og bilfoliering —
+          Opsis leverer hele merkevaren din, ferdig montert.
         </p>
+
+        <!-- CTAs -->
         <div class="hero__actions">
-          <a href="#kontakt" class="btn btn--primary btn--lg">
-            Få gratis tilbud
+          <a href="#tjenester" class="btn btn--hero-primary">
+            Velg tjeneste og beregn pris
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="#portefolje" class="btn btn--ghost btn--lg">Se våre arbeider</a>
+          <a href="#portefolje" class="btn btn--hero-ghost">
+            Se våre prosjekter
+          </a>
         </div>
+
+        <!-- Stats row -->
         <div class="hero__stats">
-          <div class="stat">
+          <div class="hero__stat">
             <strong>10+</strong>
             <span>år i bransjen</span>
           </div>
-          <div class="stat-divider"></div>
-          <div class="stat">
+          <div class="hero__stat-sep"></div>
+          <div class="hero__stat">
             <strong>500+</strong>
-            <span>leverte prosjekter</span>
+            <span>prosjekter levert</span>
           </div>
-          <div class="stat-divider"></div>
-          <div class="stat">
+          <div class="hero__stat-sep"></div>
+          <div class="hero__stat">
             <strong>8</strong>
             <span>tjenesteområder</span>
           </div>
-        </div>
-      </div>
-
-      <div class="hero__visual">
-        <div class="hero__mockup">
-          <div class="mockup-card mockup-card--1">
-            <div class="mockup-icon">🪟</div>
-            <span>Skilt & storformat</span>
+          <div class="hero__stat-sep"></div>
+          <div class="hero__stat">
+            <strong>4.9★</strong>
+            <span>kundetilfredshet</span>
           </div>
-          <div class="mockup-card mockup-card--2">
-            <div class="mockup-icon">🚗</div>
-            <span>Bilfoliering</span>
-          </div>
-          <div class="mockup-card mockup-card--3">
-            <div class="mockup-icon">👕</div>
-            <span>Profilklær</span>
-          </div>
-          <div class="mockup-card mockup-card--4">
-            <div class="mockup-icon">🎨</div>
-            <span>Grafisk design</span>
-          </div>
-          <div class="mockup-blob"></div>
         </div>
       </div>
     </div>
 
-    <div class="hero__scroll-hint">
-      <div class="scroll-line"></div>
-      <span>Scroll</span>
+    <!-- Scroll indicator -->
+    <div class="hero__scroll">
+      <div class="hero__scroll-mouse">
+        <div class="hero__scroll-wheel"></div>
+      </div>
+      <span>Scroll ned</span>
     </div>
   </section>
 
@@ -139,14 +174,15 @@
   <section class="services" id="tjenester">
     <div class="container">
       <div class="section-header">
-        <span class="badge">Tjenester</span>
-        <h2>Alt du trenger<br /><span class="gradient-text">på ett sted</span></h2>
-        <p>Vi tilbyr et komplett spekter av print- og profileringstjenester — fra konsept til ferdig montering.</p>
+        <span class="badge badge--accent">Steg 1 av 3 — Velg tjeneste</span>
+        <h2>Hva trenger<br /><span class="gradient-text">du i dag?</span></h2>
+        <p>Velg én eller flere tjenester, beregn pris og legg i kurven. Deretter sender du alt samlet som én forespørsel.</p>
       </div>
 
       <div class="services__grid">
 
         <article class="service-card service-card--featured">
+          <div class="service-card__number">01</div>
           <div class="service-card__icon">
             <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
               <rect x="6" y="10" width="36" height="28" rx="3"/>
@@ -156,12 +192,15 @@
           <h3>Skilt og storformat print</h3>
           <p>Fasadeskilt, lysreklame, banere, roll-ups og digitale trykk i alle størrelser. Vi produserer og monterer.</p>
           <div class="service-card__actions">
-            <button class="btn btn--outline btn--sm calc-trigger" data-service="skilt">Beregn pris</button>
-            <a href="#kontakt" class="service-card__link">Få tilbud <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <button class="btn btn--service-primary calc-trigger" data-service="skilt">
+              Beregn pris og bestill
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
           </div>
         </article>
 
         <article class="service-card">
+          <div class="service-card__number">02</div>
           <div class="service-card__icon">
             <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
               <ellipse cx="24" cy="30" rx="16" ry="8"/>
@@ -172,12 +211,13 @@
           <h3>Produkter og klær med trykk</h3>
           <p>Profilartikler, reklameartikler og klær med bedriftens logo — fra 1 stk til store opplag.</p>
           <div class="service-card__actions">
-            <button class="btn btn--outline btn--sm calc-trigger" data-service="produkter">Beregn pris</button>
-            <a href="#katalog" class="service-card__link">Se katalog <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <button class="btn btn--service-primary calc-trigger" data-service="produkter">Beregn pris og bestill <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+            <a href="#katalog" class="service-card__link--catalog">Se klærkatalog</a>
           </div>
         </article>
 
         <article class="service-card">
+          <div class="service-card__number">03</div>
           <div class="service-card__icon">
             <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M8 34c0-8 4-14 16-14s16 6 16 14"/>
@@ -187,12 +227,13 @@
           <h3>Arbeidstøy med trykk</h3>
           <p>Merker som Univern, Björnkläder og Sievi — kvalitetsbekleding med ditt logo for hele teamet.</p>
           <div class="service-card__actions">
-            <button class="btn btn--outline btn--sm calc-trigger" data-service="arbeidstoy">Beregn pris</button>
-            <a href="#katalog" class="service-card__link">Se katalog <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <button class="btn btn--service-primary calc-trigger" data-service="arbeidstoy">Beregn pris og bestill <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+            <a href="#katalog" class="service-card__link--catalog">Se klærkatalog</a>
           </div>
         </article>
 
         <article class="service-card">
+          <div class="service-card__number">04</div>
           <div class="service-card__icon">
             <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
               <rect x="8" y="12" width="32" height="24" rx="2"/>
@@ -203,12 +244,12 @@
           <h3>Trykksaker</h3>
           <p>Visittkort, brosjyrer, plakater, kataloger og mer — digital og offsettrykk med presise farger.</p>
           <div class="service-card__actions">
-            <button class="btn btn--outline btn--sm calc-trigger" data-service="trykksaker">Beregn pris</button>
-            <a href="#kontakt" class="service-card__link">Få tilbud <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <button class="btn btn--service-primary calc-trigger" data-service="trykksaker">Beregn pris og bestill <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
           </div>
         </article>
 
         <article class="service-card">
+          <div class="service-card__number">05</div>
           <div class="service-card__icon">
             <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
               <circle cx="24" cy="24" r="16"/>
@@ -219,8 +260,7 @@
           <h3>Grafisk design</h3>
           <p>Logo, merkevarebygging, profil og alt grafisk materiell — fra konsept til ferdig design klar for trykk.</p>
           <div class="service-card__actions">
-            <button class="btn btn--outline btn--sm calc-trigger" data-service="grafisk">Beregn pris</button>
-            <a href="#kontakt" class="service-card__link">Få tilbud <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <button class="btn btn--service-primary calc-trigger" data-service="grafisk">Beregn pris og bestill <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
           </div>
         </article>
 
@@ -231,15 +271,16 @@
               <path d="M14 22h20M14 28h12"/>
             </svg>
           </div>
+          <div class="service-card__number">06</div>
           <h3>Interiørdekor</h3>
           <p>Veggfolie, mattfolie, transparent folie og dekorative trykk — gjør lokalet til en del av merkevaren din.</p>
           <div class="service-card__actions">
-            <button class="btn btn--outline btn--sm calc-trigger" data-service="dekor">Beregn pris</button>
-            <a href="#kontakt" class="service-card__link">Få tilbud <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <button class="btn btn--service-primary calc-trigger" data-service="dekor">Beregn pris og bestill <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
           </div>
         </article>
 
         <article class="service-card">
+          <div class="service-card__number">07</div>
           <div class="service-card__icon">
             <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M6 34l10-8 8 6 8-10 10 12"/>
@@ -249,8 +290,7 @@
           <h3>Bilfoliering</h3>
           <p>Hel- og delfoliering av firmabiler, reklametrykk på kjøretøy. Profesjonell montering og UV-bestandig folie.</p>
           <div class="service-card__actions">
-            <button class="btn btn--outline btn--sm calc-trigger" data-service="bilfoliering">Beregn pris</button>
-            <a href="#kontakt" class="service-card__link">Få tilbud <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <button class="btn btn--service-primary calc-trigger" data-service="bilfoliering">Beregn pris og bestill <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
           </div>
         </article>
 
@@ -262,11 +302,11 @@
               <path d="M24 12v8"/>
             </svg>
           </div>
+          <div class="service-card__number">08</div>
           <h3>Messeutstyr</h3>
           <p>Messevegger, roll-ups, flagg, bannere og komplette messestands — imponér på neste messe.</p>
           <div class="service-card__actions">
-            <button class="btn btn--outline btn--sm calc-trigger" data-service="messe">Beregn pris</button>
-            <a href="#kontakt" class="service-card__link">Få tilbud <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <button class="btn btn--service-primary calc-trigger" data-service="messe">Beregn pris og bestill <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
           </div>
         </article>
 
@@ -559,15 +599,76 @@
   </section>
 
   <!-- ═══════════════════════════════════════════
-       CONTACT / QUOTE FORM
+       ORDER SUMMARY (Steg 2)
+  ═══════════════════════════════════════════ -->
+  <section class="order-summary" id="bestilling" style="display:none">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge badge--accent">Steg 2 av 3 — Din kurv</span>
+        <h2>Oversikt over<br /><span class="gradient-text">din bestilling</span></h2>
+        <p>Se alle valgte tjenester og produkter med estimerte priser. Fjern eller endre det du ikke trenger.</p>
+      </div>
+
+      <div class="order-summary__layout">
+        <!-- Items list -->
+        <div class="order-items" id="orderItems">
+          <!-- Rendered by cart.js -->
+        </div>
+
+        <!-- Summary sidebar -->
+        <div class="order-sidebar">
+          <div class="order-total-card">
+            <div class="order-total-card__header">
+              <h3>Estimert totalsum</h3>
+              <span class="order-total-card__note">Inkl. alle valgte tjenester</span>
+            </div>
+            <div class="order-total-card__amount">
+              <span class="order-total__min" id="orderTotalMin">0</span>
+              <span class="order-total__sep">–</span>
+              <span class="order-total__max" id="orderTotalMax">0</span>
+              <span class="order-total__currency">NOK</span>
+            </div>
+            <p class="order-total-card__disclaimer">* Estimert prisrange. Endelig pris fastsettes i tilbud basert på spesifikasjon. Eks. mva.</p>
+            <a href="#kontakt" class="btn btn--primary btn--full btn--lg order-proceed-btn">
+              Gå til bestilling
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <button class="btn btn--ghost btn--full" id="clearCartBtn">
+              Tøm kurven
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Empty state -->
+      <div class="order-empty" id="orderEmpty">
+        <div class="order-empty__icon">🛒</div>
+        <h3>Kurven er tom</h3>
+        <p>Velg en tjeneste ovenfor og klikk «Legg i kurv» for å starte bestillingen din.</p>
+        <a href="#tjenester" class="btn btn--primary">Velg tjeneste</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CONTACT / QUOTE FORM  (Steg 3)
   ═══════════════════════════════════════════ -->
   <section class="contact" id="kontakt">
     <div class="container contact__inner">
 
       <div class="contact__info">
-        <span class="badge">Kontakt</span>
-        <h2>Få ditt<br /><span class="gradient-text">gratis tilbud</span></h2>
-        <p>Fyll ut skjemaet, så tar vi kontakt innen 2 arbeidstimer med et konkret tilbud.</p>
+        <span class="badge badge--accent">Steg 3 av 3 — Send forespørsel</span>
+        <h2>Fullfør din<br /><span class="gradient-text">forespørsel</span></h2>
+        <p>Fyll inn kontaktinfo, så sender vi et konkret tilbud på alt du har valgt innen 2 arbeidstimer.</p>
+
+        <!-- Cart summary in contact sidebar -->
+        <div class="contact-cart-summary" id="contactCartSummary" style="display:none">
+          <h4>Valgte tjenester</h4>
+          <ul id="contactCartList"></ul>
+          <div class="contact-cart-total">
+            Estimert: <strong id="contactCartTotal">—</strong>
+          </div>
+        </div>
 
         <div class="contact__details">
           <div class="contact-detail">
@@ -745,6 +846,19 @@
   </footer>
 
   <!-- ═══════════════════════════════════════════
+       GLOBAL CART FAB
+  ═══════════════════════════════════════════ -->
+  <button class="global-cart-fab" id="globalCartFab" style="display:none" aria-label="Vis kurv">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <path d="M16 10a4 4 0 0 1-8 0"/>
+    </svg>
+    <span>Kurv</span>
+    <span class="global-cart-fab__count" id="globalCartCount">0</span>
+  </button>
+
+  <!-- ═══════════════════════════════════════════
        COOKIE BANNER
   ═══════════════════════════════════════════ -->
   <div class="cookie-banner" id="cookieBanner">
@@ -778,9 +892,12 @@
       </div>
       <div class="modal__footer">
         <button class="btn btn--ghost btn--sm" id="modalCancel">Avbryt</button>
-        <button class="btn btn--primary" id="modalSend">
-          Send forespørsel
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <button class="btn btn--outline" id="modalSend">
+          Send direkte forespørsel
+        </button>
+        <button class="btn btn--primary" id="modalAddToCart">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          Legg i kurv
         </button>
       </div>
     </div>
@@ -865,6 +982,7 @@
   </div>
 
   <script src="main.js"></script>
+  <script src="cart.js"></script>
   <script src="calculator.js"></script>
   <script src="catalog.js"></script>
   <script src="mockup.js"></script>

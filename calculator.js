@@ -396,18 +396,27 @@
     return n.toLocaleString('nb-NO') + ' NOK';
   }
 
+  /* ─── Service icons ────────────────────────────── */
+  const SERVICE_ICONS = {
+    skilt: '🪟', produkter: '👕', arbeidstoy: '🦺',
+    trykksaker: '🖨️', grafisk: '🎨', dekor: '🖼️',
+    bilfoliering: '🚗', messe: '🏛️',
+  };
+
   /* ─── Modal controller ─────────────────────────── */
   let currentService = null;
+  let lastResult = null;
 
-  const overlay   = document.getElementById('modalOverlay');
-  const modal     = document.getElementById('calcModal');
-  const titleEl   = document.getElementById('modalTitle');
-  const bodyEl    = document.getElementById('modalBody');
-  const resultEl  = document.getElementById('modalResult');
-  const rangeEl   = document.getElementById('priceRange');
-  const sendBtn   = document.getElementById('modalSend');
-  const cancelBtn = document.getElementById('modalCancel');
-  const closeBtn  = document.getElementById('modalClose');
+  const overlay      = document.getElementById('modalOverlay');
+  const modal        = document.getElementById('calcModal');
+  const titleEl      = document.getElementById('modalTitle');
+  const bodyEl       = document.getElementById('modalBody');
+  const resultEl     = document.getElementById('modalResult');
+  const rangeEl      = document.getElementById('priceRange');
+  const sendBtn      = document.getElementById('modalSend');
+  const addToCartBtn = document.getElementById('modalAddToCart');
+  const cancelBtn    = document.getElementById('modalCancel');
+  const closeBtn     = document.getElementById('modalClose');
 
   function openCalc(service) {
     currentService = service;
@@ -434,11 +443,24 @@
     if (!calc) return;
     try {
       const result = calc(v);
+      lastResult = result;
       rangeEl.textContent = `Fra ${fmt(result.min)} til ${fmt(result.max)}`;
       resultEl.style.display = 'block';
     } catch (e) {
       // ignore partial input
     }
+  }
+
+  function buildDetails() {
+    // Build a human-readable details string from current inputs
+    const parts = [];
+    const inputs = bodyEl.querySelectorAll('.calc-input, input[type="radio"]:checked, input[type="checkbox"]:checked');
+    inputs.forEach(el => {
+      const label = bodyEl.querySelector(`label[for="${el.id}"]`)?.textContent?.trim();
+      const val = el.type === 'checkbox' ? (el.checked ? el.closest('label')?.textContent?.trim() : null) : el.options?.[el.selectedIndex]?.text || el.value;
+      if (label && val) parts.push(`${label}: ${val}`);
+    });
+    return parts.join(' · ') || PRICING[currentService]?.title || '';
   }
 
   function closeCalc() {
@@ -465,23 +487,45 @@
     if (e.key === 'Escape') closeCalc();
   });
 
-  // "Send forespørsel" — pre-fills contact form
+  // "Legg i kurv" button
+  addToCartBtn?.addEventListener('click', () => {
+    if (!lastResult || !currentService) return;
+    const cart = window.OpsisCart;
+    if (!cart) return;
+
+    cart.add({
+      type: 'service',
+      serviceKey: currentService,
+      label: PRICING[currentService]?.title || currentService,
+      details: buildDetails(),
+      min: lastResult.min,
+      max: lastResult.max,
+      qty: 1,
+      icon: SERVICE_ICONS[currentService] || '📦',
+    });
+
+    // Visual feedback
+    addToCartBtn.innerHTML = '✓ Lagt i kurv!';
+    addToCartBtn.style.background = '#059669';
+    setTimeout(() => {
+      addToCartBtn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg> Legg i kurv`;
+      addToCartBtn.style.background = '';
+    }, 1800);
+
+    setTimeout(() => closeCalc(), 900);
+  });
+
+  // "Send direkte forespørsel" — pre-fills contact form directly
   sendBtn?.addEventListener('click', () => {
-    const serviceMap = {
-      skilt: 'skilt', produkter: 'produkter', arbeidstoy: 'arbeidstoy',
-      trykksaker: 'trykksaker', grafisk: 'grafisk', dekor: 'dekor',
-      bilfoliering: 'bilfoliering', messe: 'messe',
-    };
     const serviceSelect = document.getElementById('service');
     if (serviceSelect && currentService) {
-      serviceSelect.value = serviceMap[currentService] || '';
+      serviceSelect.value = currentService;
     }
     const msgField = document.getElementById('message');
     if (msgField && rangeEl) {
       const est = rangeEl.textContent;
-      if (msgField.value === '') {
-        msgField.value = `Jeg ønsker tilbud på ${PRICING[currentService]?.title || currentService}.\nEstimert prisrange fra kalkulatoren: ${est}.\n\n`;
-      }
+      msgField.value = `Jeg ønsker tilbud på ${PRICING[currentService]?.title || currentService}.\nSpesifikasjon: ${buildDetails()}\nEstimert prisrange: ${est}.\n\n`;
+      msgField.dataset.autoFilled = 'true';
     }
     closeCalc();
     const kontakt = document.getElementById('kontakt');
