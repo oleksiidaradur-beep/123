@@ -6,134 +6,9 @@
 (() => {
   'use strict';
 
-  /* ─── Pricing data ────────────────────────────── */
-  const PRICING = {
-    skilt: {
-      title: 'Skilt og storformat print',
-      materials: {
-        vinyl:    { label: 'Vinyl folie',   pricePerM2: 180 },
-        aluminium:{ label: 'Aluminium',     pricePerM2: 380 },
-        acrylic:  { label: 'Akryl/plexiglass', pricePerM2: 520 },
-        dibond:   { label: 'Dibond',        pricePerM2: 310 },
-      },
-      setup: 350,
-      qtyBreaks: [[1,1],[2,0.92],[6,0.82],[11,0.72],[21,0.62]],
-    },
-    produkter: {
-      title: 'Produkter og klær med trykk',
-      products: {
-        tshirt:  { label: 'T-skjorte',    base: 149 },
-        polo:    { label: 'Polo',          base: 229 },
-        hoodie:  { label: 'Hoodie',        base: 349 },
-        jakke:   { label: 'Softshell-jakke', base: 549 },
-        bag:     { label: 'Bag/sekk',      base: 199 },
-        mug:     { label: 'Kopp/krus',     base: 89 },
-        cap:     { label: 'Caps',          base: 149 },
-      },
-      methods: {
-        transfer:    { label: 'Transfertrykk', mult: 1.0 },
-        silk:        { label: 'Silketrykk',    mult: 0.88 },
-        embroidery:  { label: 'Broderi',       mult: 1.25 },
-        digital:     { label: 'Digitaltrykk',  mult: 1.1 },
-      },
-      qtyBreaks: [[1,1],[10,0.90],[25,0.80],[50,0.72],[100,0.62],[250,0.52]],
-    },
-    arbeidstoy: {
-      title: 'Arbeidstøy med trykk',
-      brands: {
-        univern:    { label: 'Univern',     mult: 1.0 },
-        bjornklader:{ label: 'Björnkläder', mult: 1.12 },
-        sievi:      { label: 'Sievi',       mult: 1.18 },
-      },
-      items: {
-        tshirt:  { label: 'T-skjorte',      base: 189 },
-        polo:    { label: 'Polo',            base: 279 },
-        shirt:   { label: 'Skjorte',         base: 399 },
-        bukse:   { label: 'Arbeidsbukse',    base: 549 },
-        jakke:   { label: 'Arbeidsjakke',    base: 749 },
-        softshell: { label: 'Softshell',     base: 649 },
-        overall: { label: 'Overall/kjeledress', base: 849 },
-      },
-      printBase: 79,
-      qtyBreaks: [[1,1],[5,0.92],[10,0.84],[25,0.76],[50,0.68]],
-    },
-    trykksaker: {
-      title: 'Trykksaker',
-      formats: {
-        visittkort: { label: 'Visittkort (85×54mm)', base100: 490 },
-        A6:  { label: 'A6 flyer', base100: 690 },
-        A5:  { label: 'A5 brosjyre', base100: 990 },
-        A4:  { label: 'A4 brosjyre', base100: 1490 },
-        A3:  { label: 'A3 plakat',  base100: 1990 },
-      },
-      papers: {
-        standard: { label: 'Standard papir',  mult: 1.0 },
-        premium:  { label: 'Premium papir',   mult: 1.35 },
-        glossy:   { label: 'Gloss laminert',  mult: 1.5 },
-        matt:     { label: 'Matt laminert',   mult: 1.45 },
-      },
-      sidesMult: { '1': 1.0, '2': 1.28 },
-      qtyBreaks: [[100,1],[250,0.72],[500,0.58],[1000,0.46],[2500,0.36]],
-    },
-    grafisk: {
-      title: 'Grafisk design',
-      projects: {
-        logo:       { label: 'Logodesign',           min: 3500, max: 8000 },
-        branding:   { label: 'Merkevare/profil',     min: 7000, max: 18000 },
-        visittkort: { label: 'Visittkort-design',    min: 890,  max: 1890 },
-        brosure:    { label: 'Brosjyre/katalog',     min: 2500, max: 8500 },
-        plakat:     { label: 'Plakat/banner-design', min: 1200, max: 3500 },
-        web:        { label: 'Sosiale medier-grafikk', min: 890, max: 2500 },
-        emballasje: { label: 'Emballasje-design',   min: 4500, max: 12000 },
-      },
-      complexity: {
-        simple:  { label: 'Enkel',    mult: 0.8 },
-        medium:  { label: 'Middels',  mult: 1.0 },
-        complex: { label: 'Kompleks', mult: 1.5 },
-      },
-    },
-    dekor: {
-      title: 'Interiørdekor',
-      materials: {
-        matt:        { label: 'Matt folie',        pricePerM2: 420 },
-        transparent: { label: 'Transparent folie', pricePerM2: 380 },
-        print:       { label: 'Print folie',       pricePerM2: 580 },
-        wallpaper:   { label: 'Fototapet',         pricePerM2: 490 },
-        frosted:     { label: 'Frosted glass',     pricePerM2: 450 },
-      },
-      setup: 500,
-      installation: 350, // per m²
-    },
-    bilfoliering: {
-      title: 'Bilfoliering',
-      vehicles: {
-        car:    { label: 'Personbil',       fullArea: 22 },
-        van:    { label: 'Varebil',         fullArea: 35 },
-        truck:  { label: 'Lastebil/buss',   fullArea: 70 },
-        bike:   { label: 'MC/elsykkel',     fullArea: 6 },
-      },
-      coverage: {
-        '25':   { label: 'Del (25%)',   mult: 0.25 },
-        '50':   { label: 'Halvfolie',  mult: 0.50 },
-        '100':  { label: 'Helfolie',   mult: 1.0  },
-      },
-      pricePerM2: 680,
-      installPerM2: 420,
-    },
-    messe: {
-      title: 'Messeutstyr',
-      items: {
-        rollup:    { label: 'Roll-up (85×200cm)',  min: 890,  max: 1490  },
-        rollupXL:  { label: 'Roll-up XL (100×200)', min: 1190, max: 1890 },
-        banner:    { label: 'Banner/streamer',     min: 490,  max: 990   },
-        flag:      { label: 'Flagg (reklameflagg)', min: 790,  max: 1490  },
-        messevegg: { label: 'Messevegg (3×3m)',    min: 8900, max: 16900 },
-        popup:     { label: 'Pop-up display',      min: 4500, max: 8500  },
-        bord:      { label: 'Messebord m/trykk',   min: 1490, max: 2990  },
-      },
-      qtyDiscount: 0.08, // 8% per extra unit after 1st
-    },
-  };
+  /* ─── Pricing data (loaded from data/pricing.json) ─ */
+  let PRICING = {};
+  fetch('/data/pricing.json').then(r => r.json()).then(data => { PRICING = data; });
 
   /* ─── Form templates for each service ─────────── */
   const FORMS = {
@@ -230,10 +105,10 @@
       <div class="calc-field">
         <label>Kompleksitet</label>
         <div class="radio-group">
-          ${Object.entries(PRICING.grafisk.complexity).map(([k,v]) =>
+          ${(PRICING.grafisk?.complexity || []).map(c =>
             `<label class="radio-label">
-               <input type="radio" name="complexity" value="${k}" ${k==='medium'?'checked':''}>
-               ${v.label}
+               <input type="radio" name="complexity" value="${c.id}" ${c.id==='medium'?'checked':''}>
+               ${c.label}
              </label>`).join('')}
         </div>
       </div>`,
@@ -298,7 +173,7 @@
       const w  = parseFloat(f('c-width'))  || 100;
       const h  = parseFloat(f('c-height')) || 60;
       const m2 = (w / 100) * (h / 100);
-      const mat = PRICING.skilt.materials[v('c-material')] || PRICING.skilt.materials.vinyl;
+      const mat = findById(PRICING.skilt.materials, v('c-material')) || PRICING.skilt.materials[0];
       const qty = parseInt(f('c-qty')) || 1;
       const disc = getQtyDiscount(PRICING.skilt.qtyBreaks, qty);
       const unit = m2 * mat.pricePerM2 + PRICING.skilt.setup / qty;
@@ -306,8 +181,8 @@
       return range(total * 0.9, total * 1.15);
     },
     produkter(f) {
-      const prod   = PRICING.produkter.products[v('c-product')]  || PRICING.produkter.products.tshirt;
-      const method = PRICING.produkter.methods[v('c-method')]    || PRICING.produkter.methods.transfer;
+      const prod   = findById(PRICING.produkter.products, v('c-product'))  || PRICING.produkter.products[0];
+      const method = findById(PRICING.produkter.methods,  v('c-method'))   || PRICING.produkter.methods[0];
       const qty    = parseInt(f('c-qty')) || 1;
       const disc   = getQtyDiscount(PRICING.produkter.qtyBreaks, qty);
       const unit   = prod.base * method.mult;
@@ -315,8 +190,8 @@
       return range(total * 0.9, total * 1.12);
     },
     arbeidstoy(f) {
-      const brand  = PRICING.arbeidstoy.brands[v('c-brand')] || PRICING.arbeidstoy.brands.univern;
-      const item   = PRICING.arbeidstoy.items[v('c-item')]   || PRICING.arbeidstoy.items.tshirt;
+      const brand  = findById(PRICING.arbeidstoy.brands, v('c-brand')) || PRICING.arbeidstoy.brands[0];
+      const item   = findById(PRICING.arbeidstoy.items,  v('c-item'))  || PRICING.arbeidstoy.items[0];
       const qty    = parseInt(f('c-qty')) || 1;
       const disc   = getQtyDiscount(PRICING.arbeidstoy.qtyBreaks, qty);
       const unit   = (item.base + PRICING.arbeidstoy.printBase) * brand.mult;
@@ -324,8 +199,8 @@
       return range(total * 0.9, total * 1.12);
     },
     trykksaker(f) {
-      const fmt    = PRICING.trykksaker.formats[v('c-format')] || PRICING.trykksaker.formats.visittkort;
-      const paper  = PRICING.trykksaker.papers[v('c-paper')]   || PRICING.trykksaker.papers.standard;
+      const fmt    = findById(PRICING.trykksaker.formats, v('c-format')) || PRICING.trykksaker.formats[0];
+      const paper  = findById(PRICING.trykksaker.papers,  v('c-paper'))  || PRICING.trykksaker.papers[0];
       const sides  = PRICING.trykksaker.sidesMult[v('c-sides')] || 1;
       const qty    = Math.max(100, parseInt(f('c-qty')) || 100);
       const disc   = getQtyDiscount(PRICING.trykksaker.qtyBreaks, qty);
@@ -333,23 +208,23 @@
       return range(base * 0.9, base * 1.15);
     },
     grafisk(f) {
-      const proj = PRICING.grafisk.projects[v('c-project')] || PRICING.grafisk.projects.logo;
+      const proj = findById(PRICING.grafisk.projects, v('c-project')) || PRICING.grafisk.projects[0];
       const compEl = document.querySelector('input[name="complexity"]:checked');
-      const comp = compEl ? (PRICING.grafisk.complexity[compEl.value] || PRICING.grafisk.complexity.medium) : PRICING.grafisk.complexity.medium;
+      const comp = compEl ? (findById(PRICING.grafisk.complexity, compEl.value) || PRICING.grafisk.complexity[1]) : PRICING.grafisk.complexity[1];
       return { min: Math.round(proj.min * comp.mult), max: Math.round(proj.max * comp.mult) };
     },
     dekor(f) {
       const w  = parseFloat(f('c-width'))  || 200;
       const h  = parseFloat(f('c-height')) || 120;
       const m2 = (w / 100) * (h / 100);
-      const mat = PRICING.dekor.materials[v('c-material')] || PRICING.dekor.materials.matt;
+      const mat = findById(PRICING.dekor.materials, v('c-material')) || PRICING.dekor.materials[0];
       const install = document.getElementById('c-install')?.checked ? PRICING.dekor.installation * m2 : 0;
       const base = m2 * mat.pricePerM2 + PRICING.dekor.setup + install;
       return range(base * 0.9, base * 1.15);
     },
     bilfoliering(f) {
-      const vehicle  = PRICING.bilfoliering.vehicles[v('c-vehicle')]  || PRICING.bilfoliering.vehicles.car;
-      const coverage = PRICING.bilfoliering.coverage[v('c-coverage')] || PRICING.bilfoliering.coverage['100'];
+      const vehicle  = findById(PRICING.bilfoliering.vehicles, v('c-vehicle'))  || PRICING.bilfoliering.vehicles[0];
+      const coverage = findById(PRICING.bilfoliering.coverage, v('c-coverage')) || PRICING.bilfoliering.coverage[2];
       const qty = parseInt(f('c-qty')) || 1;
       const area = vehicle.fullArea * coverage.mult;
       const disc = qty >= 5 ? 0.82 : qty >= 3 ? 0.90 : 1;
@@ -358,7 +233,7 @@
       return range(total * 0.9, total * 1.15);
     },
     messe(f) {
-      const item = PRICING.messe.items[v('c-item')] || PRICING.messe.items.rollup;
+      const item = findById(PRICING.messe.items, v('c-item')) || PRICING.messe.items[0];
       const qty  = parseInt(f('c-qty')) || 1;
       const extra = qty > 1 ? (qty - 1) * PRICING.messe.qtyDiscount : 0;
       const disc = 1 - extra;
@@ -377,10 +252,11 @@
   function f(id) {
     return v(id);
   }
-  function optionsFrom(obj) {
-    return Object.entries(obj)
-      .map(([k, o]) => `<option value="${k}">${o.label}</option>`)
-      .join('');
+  function findById(arr, id) {
+    return (arr || []).find(o => o.id === id);
+  }
+  function optionsFrom(arr) {
+    return (arr || []).map(o => `<option value="${o.id}">${o.label}</option>`).join('');
   }
   function getQtyDiscount(breaks, qty) {
     let mult = 1;

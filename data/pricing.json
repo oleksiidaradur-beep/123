@@ -1,0 +1,127 @@
+{
+  "skilt": {
+    "title": "Skilt og storformat print",
+    "setup": 350,
+    "materials": [
+      { "id": "vinyl",     "label": "Vinyl folie",        "pricePerM2": 180 },
+      { "id": "aluminium", "label": "Aluminium",           "pricePerM2": 380 },
+      { "id": "acrylic",   "label": "Akryl/plexiglass",   "pricePerM2": 520 },
+      { "id": "dibond",    "label": "Dibond",              "pricePerM2": 310 }
+    ],
+    "qtyBreaks": [[1,1],[2,0.92],[6,0.82],[11,0.72],[21,0.62]]
+  },
+  "produkter": {
+    "title": "Produkter og klær med trykk",
+    "products": [
+      { "id": "tshirt",  "label": "T-skjorte",       "base": 149 },
+      { "id": "polo",    "label": "Polo",             "base": 229 },
+      { "id": "hoodie",  "label": "Hoodie",           "base": 349 },
+      { "id": "jakke",   "label": "Softshell-jakke",  "base": 549 },
+      { "id": "bag",     "label": "Bag/sekk",         "base": 199 },
+      { "id": "mug",     "label": "Kopp/krus",        "base": 89  },
+      { "id": "cap",     "label": "Caps",             "base": 149 }
+    ],
+    "methods": [
+      { "id": "transfer",   "label": "Transfertrykk", "mult": 1.0  },
+      { "id": "silk",       "label": "Silketrykk",    "mult": 0.88 },
+      { "id": "embroidery", "label": "Broderi",        "mult": 1.25 },
+      { "id": "digital",    "label": "Digitaltrykk",  "mult": 1.1  }
+    ],
+    "qtyBreaks": [[1,1],[10,0.90],[25,0.80],[50,0.72],[100,0.62],[250,0.52]]
+  },
+  "arbeidstoy": {
+    "title": "Arbeidstøy med trykk",
+    "printBase": 79,
+    "brands": [
+      { "id": "univern",     "label": "Univern",      "mult": 1.0  },
+      { "id": "bjornklader", "label": "Björnkläder",  "mult": 1.12 },
+      { "id": "sievi",       "label": "Sievi",        "mult": 1.18 }
+    ],
+    "items": [
+      { "id": "tshirt",    "label": "T-skjorte",          "base": 189 },
+      { "id": "polo",      "label": "Polo",               "base": 279 },
+      { "id": "shirt",     "label": "Skjorte",            "base": 399 },
+      { "id": "bukse",     "label": "Arbeidsbukse",       "base": 549 },
+      { "id": "jakke",     "label": "Arbeidsjakke",       "base": 749 },
+      { "id": "softshell", "label": "Softshell",          "base": 649 },
+      { "id": "overall",   "label": "Overall/kjeledress", "base": 849 }
+    ],
+    "qtyBreaks": [[1,1],[5,0.92],[10,0.84],[25,0.76],[50,0.68]]
+  },
+  "trykksaker": {
+    "title": "Trykksaker",
+    "formats": [
+      { "id": "visittkort", "label": "Visittkort (85×54mm)", "base100": 490  },
+      { "id": "A6",         "label": "A6 flyer",             "base100": 690  },
+      { "id": "A5",         "label": "A5 brosjyre",          "base100": 990  },
+      { "id": "A4",         "label": "A4 brosjyre",          "base100": 1490 },
+      { "id": "A3",         "label": "A3 plakat",            "base100": 1990 }
+    ],
+    "papers": [
+      { "id": "standard", "label": "Standard papir",  "mult": 1.0  },
+      { "id": "premium",  "label": "Premium papir",   "mult": 1.35 },
+      { "id": "glossy",   "label": "Gloss laminert",  "mult": 1.5  },
+      { "id": "matt",     "label": "Matt laminert",   "mult": 1.45 }
+    ],
+    "sidesMult": { "1": 1.0, "2": 1.28 },
+    "qtyBreaks": [[100,1],[250,0.72],[500,0.58],[1000,0.46],[2500,0.36]]
+  },
+  "grafisk": {
+    "title": "Grafisk design",
+    "projects": [
+      { "id": "logo",       "label": "Logodesign",             "min": 3500, "max": 8000  },
+      { "id": "branding",   "label": "Merkevare/profil",       "min": 7000, "max": 18000 },
+      { "id": "visittkort", "label": "Visittkort-design",      "min": 890,  "max": 1890  },
+      { "id": "brosure",    "label": "Brosjyre/katalog",       "min": 2500, "max": 8500  },
+      { "id": "plakat",     "label": "Plakat/banner-design",   "min": 1200, "max": 3500  },
+      { "id": "web",        "label": "Sosiale medier-grafikk", "min": 890,  "max": 2500  },
+      { "id": "emballasje", "label": "Emballasje-design",      "min": 4500, "max": 12000 }
+    ],
+    "complexity": [
+      { "id": "simple",  "label": "Enkel",    "mult": 0.8 },
+      { "id": "medium",  "label": "Middels",  "mult": 1.0 },
+      { "id": "complex", "label": "Kompleks", "mult": 1.5 }
+    ]
+  },
+  "dekor": {
+    "title": "Interiørdekor",
+    "setup": 500,
+    "installation": 350,
+    "materials": [
+      { "id": "matt",        "label": "Matt folie",        "pricePerM2": 420 },
+      { "id": "transparent", "label": "Transparent folie", "pricePerM2": 380 },
+      { "id": "print",       "label": "Print folie",       "pricePerM2": 580 },
+      { "id": "wallpaper",   "label": "Fototapet",         "pricePerM2": 490 },
+      { "id": "frosted",     "label": "Frosted glass",     "pricePerM2": 450 }
+    ]
+  },
+  "bilfoliering": {
+    "title": "Bilfoliering",
+    "pricePerM2": 680,
+    "installPerM2": 420,
+    "vehicles": [
+      { "id": "car",   "label": "Personbil",     "fullArea": 22 },
+      { "id": "van",   "label": "Varebil",       "fullArea": 35 },
+      { "id": "truck", "label": "Lastebil/buss", "fullArea": 70 },
+      { "id": "bike",  "label": "MC/elsykkel",   "fullArea": 6  }
+    ],
+    "coverage": [
+      { "id": "25",  "label": "Del (25%)",  "mult": 0.25 },
+      { "id": "50",  "label": "Halvfolie", "mult": 0.50 },
+      { "id": "100", "label": "Helfolie",  "mult": 1.0  }
+    ]
+  },
+  "messe": {
+    "title": "Messeutstyr",
+    "qtyDiscount": 0.08,
+    "items": [
+      { "id": "rollup",    "label": "Roll-up (85×200cm)",    "min": 890,  "max": 1490  },
+      { "id": "rollupXL",  "label": "Roll-up XL (100×200)",  "min": 1190, "max": 1890  },
+      { "id": "banner",    "label": "Banner/streamer",        "min": 490,  "max": 990   },
+      { "id": "flag",      "label": "Flagg (reklameflagg)",   "min": 790,  "max": 1490  },
+      { "id": "messevegg", "label": "Messevegg (3×3m)",       "min": 8900, "max": 16900 },
+      { "id": "popup",     "label": "Pop-up display",         "min": 4500, "max": 8500  },
+      { "id": "bord",      "label": "Messebord m/trykk",      "min": 1490, "max": 2990  }
+    ]
+  }
+}
