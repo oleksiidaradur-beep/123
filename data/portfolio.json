@@ -215,6 +215,15 @@
       "client": "Helseklinikk AS",
       "desc": "Stoff-backdrop 3×2 m med sub-limation print. Sammenleggbar aluminiumsramme. Enkel montering på 15 minutter.",
       "img": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=700&h=500&fit=crop"
+    },
+    {
+      "size": "wide",
+      "id": 25,
+      "cat": "trykk",
+      "title": "12213123",
+      "client": "3142523452345",
+      "desc": "2345дулкцпожудлоапжцдулаоп",
+      "img": "/images/uploads/image-2-.png"
     }
   ]
 }
