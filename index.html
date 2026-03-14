@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="catalog.css" />
 </head>
 <body>
 
@@ -24,6 +25,7 @@
 
       <nav class="navbar__nav" id="navMenu">
         <a href="#tjenester">Tjenester</a>
+        <a href="#katalog">Katalog</a>
         <a href="#portefolje">Portefølje</a>
         <a href="#om-oss">Om oss</a>
         <a href="#kontakt" class="btn btn--outline btn--sm">Få tilbud</a>
@@ -153,10 +155,10 @@
           </div>
           <h3>Skilt og storformat print</h3>
           <p>Fasadeskilt, lysreklame, banere, roll-ups og digitale trykk i alle størrelser. Vi produserer og monterer.</p>
-          <a href="#kontakt" class="service-card__link">
-            Få tilbud
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
+          <div class="service-card__actions">
+            <button class="btn btn--outline btn--sm calc-trigger" data-service="skilt">Beregn pris</button>
+            <a href="#kontakt" class="service-card__link">Få tilbud <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
         </article>
 
         <article class="service-card">
@@ -169,7 +171,10 @@
           </div>
           <h3>Produkter og klær med trykk</h3>
           <p>Profilartikler, reklameartikler og klær med bedriftens logo — fra 1 stk til store opplag.</p>
-          <a href="#kontakt" class="service-card__link">Få tilbud <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <div class="service-card__actions">
+            <button class="btn btn--outline btn--sm calc-trigger" data-service="produkter">Beregn pris</button>
+            <a href="#katalog" class="service-card__link">Se katalog <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
         </article>
 
         <article class="service-card">
@@ -181,7 +186,10 @@
           </div>
           <h3>Arbeidstøy med trykk</h3>
           <p>Merker som Univern, Björnkläder og Sievi — kvalitetsbekleding med ditt logo for hele teamet.</p>
-          <a href="#kontakt" class="service-card__link">Få tilbud <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <div class="service-card__actions">
+            <button class="btn btn--outline btn--sm calc-trigger" data-service="arbeidstoy">Beregn pris</button>
+            <a href="#katalog" class="service-card__link">Se katalog <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
         </article>
 
         <article class="service-card">
@@ -194,7 +202,10 @@
           </div>
           <h3>Trykksaker</h3>
           <p>Visittkort, brosjyrer, plakater, kataloger og mer — digital og offsettrykk med presise farger.</p>
-          <a href="#kontakt" class="service-card__link">Få tilbud <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <div class="service-card__actions">
+            <button class="btn btn--outline btn--sm calc-trigger" data-service="trykksaker">Beregn pris</button>
+            <a href="#kontakt" class="service-card__link">Få tilbud <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
         </article>
 
         <article class="service-card">
@@ -207,7 +218,10 @@
           </div>
           <h3>Grafisk design</h3>
           <p>Logo, merkevarebygging, profil og alt grafisk materiell — fra konsept til ferdig design klar for trykk.</p>
-          <a href="#kontakt" class="service-card__link">Få tilbud <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <div class="service-card__actions">
+            <button class="btn btn--outline btn--sm calc-trigger" data-service="grafisk">Beregn pris</button>
+            <a href="#kontakt" class="service-card__link">Få tilbud <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
         </article>
 
         <article class="service-card">
@@ -219,7 +233,10 @@
           </div>
           <h3>Interiørdekor</h3>
           <p>Veggfolie, mattfolie, transparent folie og dekorative trykk — gjør lokalet til en del av merkevaren din.</p>
-          <a href="#kontakt" class="service-card__link">Få tilbud <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <div class="service-card__actions">
+            <button class="btn btn--outline btn--sm calc-trigger" data-service="dekor">Beregn pris</button>
+            <a href="#kontakt" class="service-card__link">Få tilbud <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
         </article>
 
         <article class="service-card">
@@ -231,7 +248,10 @@
           </div>
           <h3>Bilfoliering</h3>
           <p>Hel- og delfoliering av firmabiler, reklametrykk på kjøretøy. Profesjonell montering og UV-bestandig folie.</p>
-          <a href="#kontakt" class="service-card__link">Få tilbud <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <div class="service-card__actions">
+            <button class="btn btn--outline btn--sm calc-trigger" data-service="bilfoliering">Beregn pris</button>
+            <a href="#kontakt" class="service-card__link">Få tilbud <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
         </article>
 
         <article class="service-card">
@@ -244,11 +264,76 @@
           </div>
           <h3>Messeutstyr</h3>
           <p>Messevegger, roll-ups, flagg, bannere og komplette messestands — imponér på neste messe.</p>
-          <a href="#kontakt" class="service-card__link">Få tilbud <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <div class="service-card__actions">
+            <button class="btn btn--outline btn--sm calc-trigger" data-service="messe">Beregn pris</button>
+            <a href="#kontakt" class="service-card__link">Få tilbud <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
         </article>
 
       </div>
     </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CLOTHING CATALOG
+  ═══════════════════════════════════════════ -->
+  <section class="catalog" id="katalog">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Katalog</span>
+        <h2>Klær og produkter<br /><span class="gradient-text">med ditt merke</span></h2>
+        <p>Velg plagg, sett antall og design din mockup — direkte i nettleseren.</p>
+      </div>
+
+      <!-- Filters -->
+      <div class="catalog__filters">
+        <div class="catalog__filter-row">
+          <div class="filter-tabs" id="categoryTabs">
+            <button class="filter-tab active" data-cat="all">Alle</button>
+            <button class="filter-tab" data-cat="topper">Topper</button>
+            <button class="filter-tab" data-cat="jakker">Jakker</button>
+            <button class="filter-tab" data-cat="bukser">Bukser</button>
+            <button class="filter-tab" data-cat="caps">Caps</button>
+            <button class="filter-tab" data-cat="tilbehor">Tilbehør</button>
+          </div>
+          <div class="brand-pills" id="brandPills">
+            <button class="brand-pill active" data-brand="all">Alle merker</button>
+            <button class="brand-pill" data-brand="univern">Univern</button>
+            <button class="brand-pill" data-brand="bjornklader">Björnkläder</button>
+            <button class="brand-pill" data-brand="sievi">Sievi</button>
+            <button class="brand-pill" data-brand="neutral">Neutral</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product grid — rendered by catalog.js -->
+      <div class="catalog__grid" id="catalogGrid"></div>
+
+      <!-- Empty state -->
+      <div class="catalog__empty" id="catalogEmpty" style="display:none">
+        <p>Ingen produkter matcher filteret. <button class="link-btn" id="resetFilters">Nullstill</button></p>
+      </div>
+    </div>
+
+    <!-- Inquiry drawer -->
+    <div class="inquiry-drawer" id="inquiryDrawer">
+      <div class="inquiry-drawer__header">
+        <h4>Din forespørsel</h4>
+        <span class="inquiry-badge" id="inquiryCount">0</span>
+        <button class="inquiry-drawer__close" id="inquiryClose">&times;</button>
+      </div>
+      <ul class="inquiry-list" id="inquiryList"></ul>
+      <div class="inquiry-drawer__footer">
+        <button class="btn btn--primary btn--full" id="sendInquiryBtn">Send forespørsel</button>
+      </div>
+    </div>
+
+    <!-- Floating inquiry button -->
+    <button class="inquiry-fab" id="inquiryFab" style="display:none">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      Forespørsel
+      <span class="inquiry-fab__count" id="fabCount">0</span>
+    </button>
   </section>
 
   <!-- ═══════════════════════════════════════════
@@ -672,6 +757,116 @@
     </div>
   </div>
 
+  <!-- ═══════════════════════════════════════════
+       CALCULATOR MODALS (8 services)
+  ═══════════════════════════════════════════ -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="calcModal" role="dialog" aria-modal="true">
+      <div class="modal__header">
+        <h3 class="modal__title" id="modalTitle">Beregn pris</h3>
+        <button class="modal__close" id="modalClose" aria-label="Lukk">&times;</button>
+      </div>
+      <div class="modal__body" id="modalBody">
+        <!-- Dynamic content injected by calculator.js -->
+      </div>
+      <div class="modal__result" id="modalResult" style="display:none">
+        <div class="price-result">
+          <span class="price-result__label">Estimert pris</span>
+          <span class="price-result__range" id="priceRange">—</span>
+          <span class="price-result__note">Endelig pris fastsettes i tilbud basert på din spesifikasjon.</span>
+        </div>
+      </div>
+      <div class="modal__footer">
+        <button class="btn btn--ghost btn--sm" id="modalCancel">Avbryt</button>
+        <button class="btn btn--primary" id="modalSend">
+          Send forespørsel
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       MOCKUP MODAL
+  ═══════════════════════════════════════════ -->
+  <div class="modal-overlay" id="mockupOverlay">
+    <div class="modal modal--wide" id="mockupModal" role="dialog" aria-modal="true">
+      <div class="modal__header">
+        <h3 class="modal__title">Design din mockup</h3>
+        <button class="modal__close" id="mockupClose" aria-label="Lukk">&times;</button>
+      </div>
+      <div class="modal__body mockup-layout">
+        <div class="mockup-canvas-wrap">
+          <canvas id="mockupCanvas" width="480" height="540"></canvas>
+        </div>
+        <div class="mockup-controls">
+          <div class="mockup-control-group">
+            <label>Plaggfarge</label>
+            <div class="color-swatches" id="clothingColors">
+              <button class="color-swatch active" data-color="#FFFFFF" style="background:#FFFFFF" title="Hvit"></button>
+              <button class="color-swatch" data-color="#1a1d23" style="background:#1a1d23" title="Sort"></button>
+              <button class="color-swatch" data-color="#0057FF" style="background:#0057FF" title="Blå"></button>
+              <button class="color-swatch" data-color="#E63946" style="background:#E63946" title="Rød"></button>
+              <button class="color-swatch" data-color="#2D6A4F" style="background:#2D6A4F" title="Grønn"></button>
+              <button class="color-swatch" data-color="#F4A261" style="background:#F4A261" title="Oransje"></button>
+            </div>
+          </div>
+          <div class="mockup-control-group">
+            <label>Plagtype</label>
+            <div class="garment-btns" id="garmentBtns">
+              <button class="garment-btn active" data-garment="tshirt">T-skjorte</button>
+              <button class="garment-btn" data-garment="hoodie">Hoodie</button>
+              <button class="garment-btn" data-garment="polo">Polo</button>
+            </div>
+          </div>
+          <div class="mockup-control-group">
+            <label>Logoposisjon</label>
+            <div class="placement-btns" id="placementBtns">
+              <button class="placement-btn active" data-placement="front-chest">Bryst foran</button>
+              <button class="placement-btn" data-placement="front-full">Midt foran</button>
+              <button class="placement-btn" data-placement="back">Rygg</button>
+              <button class="placement-btn" data-placement="left-sleeve">V. erme</button>
+            </div>
+          </div>
+          <div class="mockup-control-group">
+            <label>Last opp logo</label>
+            <label class="file-upload-btn" for="logoUpload">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              Velg fil (PNG/SVG)
+            </label>
+            <input type="file" id="logoUpload" accept="image/*" style="display:none">
+          </div>
+          <div class="mockup-control-group">
+            <label>Eller skriv tekst</label>
+            <input type="text" id="mockupText" class="mockup-text-input" placeholder="Bedriftsnavn / slagord...">
+            <div class="text-options">
+              <input type="color" id="textColor" value="#1a1d23" title="Tekstfarge">
+              <select id="textSize">
+                <option value="18">Liten</option>
+                <option value="26" selected>Medium</option>
+                <option value="36">Stor</option>
+              </select>
+            </div>
+          </div>
+          <div class="mockup-control-group">
+            <label>Logostørrelse</label>
+            <input type="range" id="logoSize" min="30" max="220" value="90" class="range-slider">
+          </div>
+          <div class="mockup-actions">
+            <button class="btn btn--ghost btn--sm" id="clearMockup">Nullstill</button>
+            <button class="btn btn--primary" id="downloadMockup">
+              Last ned PNG
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="main.js"></script>
+  <script src="calculator.js"></script>
+  <script src="catalog.js"></script>
+  <script src="mockup.js"></script>
 </body>
 </html>
