@@ -5,108 +5,8 @@
 (() => {
   'use strict';
 
-  /* ─── Product data ─────────────────────────────── */
-  const PRODUCTS = [
-    {
-      id: 'u-tshirt-1',
-      name: 'Klassisk T-skjorte',
-      category: 'topper',
-      price: 149,
-      colors: ['#FFFFFF','#1a1d23','#0057FF','#E63946','#2D6A4F'],
-      img: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop',
-      garment: 'tshirt',
-    },
-    {
-      id: 'u-polo-1',
-      name: 'Polo-skjorte',
-      category: 'topper',
-      price: 229,
-      colors: ['#FFFFFF','#1a1d23','#0057FF','#2D6A4F'],
-      img: 'https://images.unsplash.com/photo-1625910513178-c8b3c1d4b55d?w=400&h=400&fit=crop',
-      garment: 'polo',
-    },
-    {
-      id: 'u-hoodie-1',
-      name: 'Zip Hoodie',
-      category: 'topper',
-      price: 349,
-      colors: ['#FFFFFF','#1a1d23','#6B7280','#0057FF'],
-      img: 'https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=400&h=400&fit=crop',
-      garment: 'hoodie',
-    },
-    {
-      id: 'bj-jacket-1',
-      name: 'Softshell-jakke',
-      category: 'jakker',
-      price: 749,
-      colors: ['#1a1d23','#E63946','#FF5C00','#2D6A4F'],
-      img: 'https://images.unsplash.com/photo-1604644401890-0bd678c83788?w=400&h=400&fit=crop',
-      garment: 'jakke',
-    },
-    {
-      id: 'bj-vest-1',
-      name: 'Vinterjakke Pro',
-      category: 'jakker',
-      price: 1090,
-      colors: ['#1a1d23','#FF5C00','#2D6A4F'],
-      img: 'https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=400&h=400&fit=crop',
-      garment: 'jakke',
-    },
-    {
-      id: 'bj-tshirt-1',
-      name: 'Arbeidsskjorte',
-      category: 'topper',
-      price: 279,
-      colors: ['#FFFFFF','#1a1d23','#FF5C00'],
-      img: 'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=400&h=400&fit=crop',
-      garment: 'tshirt',
-    },
-    {
-      id: 'si-pants-1',
-      name: 'Arbeidsbukse Flex',
-      category: 'bukser',
-      price: 549,
-      colors: ['#1a1d23','#FF5C00','#2D6A4F'],
-      img: 'https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=400&h=400&fit=crop',
-      garment: 'bukse',
-    },
-    {
-      id: 'n-tshirt-1',
-      name: 'Organic T-skjorte',
-      category: 'topper',
-      price: 179,
-      colors: ['#FFFFFF','#1a1d23','#6B7280','#F4A261'],
-      img: 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400&h=400&fit=crop',
-      garment: 'tshirt',
-    },
-    {
-      id: 'n-hoodie-1',
-      name: 'Organic Hoodie',
-      category: 'topper',
-      price: 399,
-      colors: ['#FFFFFF','#1a1d23','#6B7280'],
-      img: 'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=400&h=400&fit=crop',
-      garment: 'hoodie',
-    },
-    {
-      id: 'n-cap-1',
-      name: 'Klassisk caps',
-      category: 'caps',
-      price: 149,
-      colors: ['#FFFFFF','#1a1d23','#0057FF','#E63946','#2D6A4F','#F4A261'],
-      img: 'https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=400&h=400&fit=crop',
-      garment: 'caps',
-    },
-    {
-      id: 'u-bag-1',
-      name: 'Ryggsekk med logo',
-      category: 'tilbehor',
-      price: 299,
-      colors: ['#1a1d23','#0057FF','#E63946'],
-      img: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop',
-      garment: null,
-    },
-  ];
+  /* ─── Product data (loaded from data/catalog.json) ─ */
+  let PRODUCTS = [];
 
   /* ─── State ────────────────────────────────────── */
   const state = {
@@ -259,6 +159,11 @@
   };
 
   /* ─── Init ─────────────────────────────────────── */
-  render();
+  fetch('/data/catalog.json')
+    .then(r => r.json())
+    .then(data => {
+      PRODUCTS = data.products || [];
+      render();
+    });
 
 })();

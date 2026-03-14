@@ -57,6 +57,56 @@ collections:
                   config:
                     multiple: false
 
+  # ── PROFILKLÆR KATALOG ─────────────────────────────────────────────────────
+  - name: "catalog"
+    label: "Profilklær"
+    files:
+      - name: "products"
+        label: "Alle produkter"
+        file: "data/catalog.json"
+        fields:
+          - name: products
+            label: Produkter
+            label_singular: Produkt
+            widget: list
+            summary: "{{fields.name}} — {{fields.price}} kr"
+            fields:
+              - { label: "ID",    name: id,    widget: string, hint: "Unik kode, f.eks. u-tshirt-2" }
+              - { label: "Navn",  name: name,  widget: string }
+              - label: "Kategori"
+                name: category
+                widget: select
+                options:
+                  - { label: "Topper (t-skjorter, hettegensere)",  value: "topper"   }
+                  - { label: "Jakker",                              value: "jakker"   }
+                  - { label: "Bukser",                              value: "bukser"   }
+                  - { label: "Caps",                                value: "caps"     }
+                  - { label: "Tilbehør",                            value: "tilbehor" }
+              - { label: "Pris fra (NOK)", name: price, widget: number, value_type: int }
+              - label: "Plaggtype (for mockup)"
+                name: garment
+                widget: select
+                options:
+                  - { label: "T-skjorte", value: "tshirt" }
+                  - { label: "Polo",      value: "polo"   }
+                  - { label: "Hoodie",    value: "hoodie" }
+                  - { label: "Jakke",     value: "jakke"  }
+                  - { label: "Bukse",     value: "bukse"  }
+                  - { label: "Caps",      value: "caps"   }
+                  - { label: "Ingen",     value: ""       }
+              - label: "Bilde"
+                name: img
+                widget: image
+                choose_url: true
+                hint: "Last opp eller lim inn URL"
+              - label: "Tilgjengelige farger (hex)"
+                name: colors
+                widget: list
+                field:
+                  label: "Farge"
+                  name: color
+                  widget: color
+
   # ── INNSTILLINGER ──────────────────────────────────────────────────────────
   - name: "settings"
     label: "Nettstedsinnstillinger"
