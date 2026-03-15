@@ -111,8 +111,8 @@
 /* ── Filter Bar ─────────────────────────────────────── */
 .pf-filter-bar {
   position: sticky;
-  top: 72px;
-  z-index: 100;
+  top: var(--navbar-h, 56px);
+  z-index: 99;
   background: rgba(255,255,255,.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border);
@@ -183,6 +183,7 @@
 .pf-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 220px;
   gap: 16px;
   grid-auto-flow: dense;
 }
@@ -200,11 +201,7 @@
   overflow: hidden;
   cursor: pointer;
   background: var(--color-border);
-  aspect-ratio: 4/3;
 }
-
-.pf-item--tall   { aspect-ratio: auto; }
-.pf-item--feature { aspect-ratio: auto; }
 
 .pf-item__img {
   width: 100%;
@@ -503,7 +500,7 @@
   .pf-hero__stats { flex-wrap: wrap; justify-content: center; gap: var(--space-5); }
   .pf-hero__stat-sep { display: none; }
 
-  .pf-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .pf-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 180px; gap: 10px; }
   .pf-item--feature,
   .pf-item--wide { grid-column: span 2; }
   .pf-item--tall { grid-row: span 1; }
@@ -519,7 +516,7 @@
 }
 
 @media (max-width: 480px) {
-  .pf-grid { grid-template-columns: 1fr; }
+  .pf-grid { grid-template-columns: 1fr; grid-auto-rows: 200px; }
   .pf-item--wide,
   .pf-item--feature { grid-column: span 1; }
 }
