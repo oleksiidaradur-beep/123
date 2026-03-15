@@ -18,8 +18,7 @@
   };
 
   function sizeClass(size) {
-    if (size === 'wide')    return 'portfolio-item--wide';
-    if (size === 'feature') return 'portfolio-item--feature';
+    if (size === 'wide' || size === 'feature') return 'portfolio-item--wide';
     return '';
   }
 

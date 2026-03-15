@@ -743,13 +743,32 @@
           <span class="price-result__note">Endelig pris fastsettes i tilbud basert på din spesifikasjon.</span>
         </div>
       </div>
+
+      <!-- Attachment section — always visible -->
+      <div class="modal__attach">
+        <p class="modal__attach-lbl">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="flex-shrink:0"><path d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48"/></svg>
+          Design / referansefil <span style="font-weight:400;opacity:.6">(valgfritt)</span>
+        </p>
+        <div class="modal__attach-row">
+          <input type="text" id="attachUrl" class="modal__attach-input"
+            placeholder="Lim inn lenke — Dropbox, Drive, WeTransfer …" />
+          <label class="modal__attach-upload" for="attachFile" title="Last opp fil">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+            Last opp
+            <input type="file" id="attachFile" accept=".pdf,.ai,.eps,.png,.jpg,.jpeg,.svg,.zip,.psd" hidden>
+          </label>
+        </div>
+        <p class="modal__attach-filename" id="attachFilename" style="display:none"></p>
+      </div>
+
       <div class="modal__footer">
         <button class="btn btn--ghost btn--sm" id="modalCancel">Avbryt</button>
-        <button class="btn btn--outline" id="modalSend">
+        <button class="btn btn--outline btn--sm" id="modalSend">
           Send direkte forespørsel
         </button>
-        <button class="btn btn--primary" id="modalAddToCart">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <button class="btn btn--primary btn--sm" id="modalAddToCart">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
           Legg i kurv
         </button>
       </div>

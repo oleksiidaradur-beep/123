@@ -431,6 +431,17 @@
     setTimeout(() => closeCalc(), 900);
   });
 
+  // File/link attachment — show selected filename
+  const attachFile = document.getElementById('attachFile');
+  const attachFilename = document.getElementById('attachFilename');
+  attachFile?.addEventListener('change', () => {
+    const file = attachFile.files?.[0];
+    if (file && attachFilename) {
+      attachFilename.style.display = 'flex';
+      attachFilename.textContent = '📎 ' + file.name;
+    }
+  });
+
   // "Send direkte forespørsel" — pre-fills contact form directly
   sendBtn?.addEventListener('click', () => {
     const serviceSelect = document.getElementById('service');
@@ -440,7 +451,12 @@
     const msgField = document.getElementById('message');
     if (msgField && rangeEl) {
       const est = rangeEl.textContent;
-      msgField.value = `Jeg ønsker tilbud på ${PRICING[currentService]?.title || currentService}.\nSpesifikasjon: ${buildDetails()}\nEstimert prisrange: ${est}.\n\n`;
+      const attachUrl = (document.getElementById('attachUrl')?.value || '').trim();
+      const attachedFile = attachFile?.files?.[0]?.name || '';
+      let attachLine = '';
+      if (attachUrl)   attachLine += `\nVedlegg (lenke): ${attachUrl}`;
+      if (attachedFile) attachLine += `\nVedlegg (fil): ${attachedFile}`;
+      msgField.value = `Jeg ønsker tilbud på ${PRICING[currentService]?.title || currentService}.\nSpesifikasjon: ${buildDetails()}\nEstimert prisrange: ${est}.${attachLine}\n\n`;
       msgField.dataset.autoFilled = 'true';
     }
     closeCalc();

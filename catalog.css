@@ -50,9 +50,10 @@
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-xl);
   width: 100%;
-  max-width: 520px;
+  max-width: 540px;
   max-height: 90vh;
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
   transform: translateY(20px) scale(0.98);
   transition: transform 0.25s ease;
 }
@@ -102,10 +103,11 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
+  overflow-y: auto;
+  flex: 1;
 }
 
 .modal__result {
-  margin: 0 var(--space-6);
   padding: var(--space-4) var(--space-5);
   background: var(--color-primary-light);
   border: 1px solid rgba(0,87,255,.2);
@@ -114,16 +116,95 @@
 
 .modal__footer {
   display: flex;
+  align-items: center;
   justify-content: flex-end;
-  gap: var(--space-3);
-  padding: var(--space-4) var(--space-6);
-  border-top: 1px solid var(--color-border);
   flex-wrap: wrap;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-5);
+  border-top: 1px solid var(--color-border);
+  flex-shrink: 0;
+  background: #fff;
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
 }
 
 .modal__footer .btn {
   padding: 10px var(--space-5);
   font-size: var(--text-sm);
+}
+
+/* ─── Attachment section ─────────────────────────── */
+.modal__attach {
+  padding: var(--space-3) var(--space-5) var(--space-4);
+  border-top: 1px dashed var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.modal__attach-lbl {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.modal__attach-row {
+  display: flex;
+  gap: var(--space-2);
+  align-items: stretch;
+}
+
+.modal__attach-input {
+  flex: 1;
+  padding: 8px var(--space-3);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  background: var(--color-bg-subtle);
+  transition: border-color var(--transition), box-shadow var(--transition);
+  min-width: 0;
+}
+.modal__attach-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0,87,255,.1);
+  background: #fff;
+}
+.modal__attach-input::placeholder { color: var(--color-text-light); font-size: 0.8rem; }
+
+.modal__attach-upload {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 12px;
+  background: var(--color-bg-subtle);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition);
+}
+.modal__attach-upload:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+
+.modal__attach-filename {
+  font-size: var(--text-xs);
+  color: var(--color-primary);
+  font-weight: 600;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 /* ─── Calculator form fields ─────────────────────── */
