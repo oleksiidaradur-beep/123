@@ -3,7 +3,7 @@
    ═══════════════════════════════════════════════════ */
 
 /* ── Navbar override (always light on portfolio page) */
-.navbar--scrolled { background: rgba(255,255,255,.97) !important; backdrop-filter: blur(16px); box-shadow: 0 1px 0 var(--color-border); }
+.navbar--scrolled { background: rgba(255,255,255,.97) !important; backdrop-filter: blur(16px); box-shadow: 0 1px 0 var(--color-border); padding: var(--space-3) 0; }
 .navbar--scrolled .logo-name { color: var(--color-text); }
 .navbar--scrolled .navbar__nav a { color: var(--color-text-muted); }
 .navbar--scrolled .navbar__nav a:hover { color: var(--color-text); }

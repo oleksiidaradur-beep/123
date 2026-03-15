@@ -868,6 +868,19 @@
   border-top: 1px solid var(--color-border);
 }
 
+.mockup-cart-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.mockup-cart-actions .btn {
+  padding: 12px var(--space-5);
+  font-size: var(--text-sm);
+  border-radius: var(--radius-md);
+}
+
 /* ════════════════════════════════════════════════════
    RESPONSIVE OVERRIDES
 ════════════════════════════════════════════════════ */

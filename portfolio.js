@@ -154,11 +154,15 @@
   }, { passive: true });
 
   /* ─── Sync filter bar top with navbar height ───── */
+  let lastNavH = 0;
   function syncFilterBarTop() {
     const navbar = document.getElementById('navbar');
-    const bar = document.getElementById('filterBar');
-    if (navbar && bar) {
-      document.documentElement.style.setProperty('--navbar-h', navbar.offsetHeight + 'px');
+    if (navbar) {
+      const h = navbar.offsetHeight;
+      if (h !== lastNavH) {
+        lastNavH = h;
+        document.documentElement.style.setProperty('--navbar-h', h + 'px');
+      }
     }
   }
   syncFilterBarTop();
@@ -166,6 +170,7 @@
 
   /* ─── Sticky filter bar shadow ─────────────────── */
   window.addEventListener('scroll', () => {
+    syncFilterBarTop();
     const bar = document.getElementById('filterBar');
     if (bar) bar.classList.toggle('pf-filter-bar--shadow', window.scrollY > 200);
   }, { passive: true });
