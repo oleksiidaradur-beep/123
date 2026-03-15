@@ -1641,8 +1641,8 @@ input, select, textarea { font: inherit; }
   .process-step { max-width: 100%; }
 
   /* Portfolio */
-  .portfolio__grid { grid-template-columns: 1fr; }
-  .portfolio-item--wide { grid-column: span 1; aspect-ratio: 4/3; }
+  .portfolio__grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-2); }
+  .portfolio-item--wide { grid-column: span 2; aspect-ratio: 16/7; }
 
   /* Why us */
   .why-us__inner { grid-template-columns: 1fr; }
@@ -1713,6 +1713,10 @@ input, select, textarea { font: inherit; }
   .hero__actions { flex-direction: column; width: 100%; }
   .btn--hero-primary,
   .btn--hero-ghost { width: 100%; justify-content: center; }
+
+  /* Portfolio grid — single column on very small screens */
+  .portfolio__grid { grid-template-columns: 1fr; }
+  .portfolio-item--wide { grid-column: span 1; aspect-ratio: 4/3; }
 }
 
 /* Respect prefers-reduced-motion */
