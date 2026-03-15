@@ -127,7 +127,8 @@ input, select, textarea { font: inherit; }
   transition: all var(--transition);
   white-space: nowrap;
   cursor: pointer;
-  border: 2px solid transparent;
+  border: none;
+  outline: none;
   letter-spacing: 0.01em;
 }
 .btn:active { transform: translateY(0) !important; }
@@ -148,7 +149,7 @@ input, select, textarea { font: inherit; }
 }
 
 .btn--outline {
-  border-color: var(--color-primary);
+  border: 2px solid var(--color-primary);
   color: var(--color-primary);
   background: transparent;
 }
@@ -159,7 +160,7 @@ input, select, textarea { font: inherit; }
 }
 
 .btn--outline-white {
-  border-color: rgba(255,255,255,.45);
+  border: 2px solid rgba(255,255,255,.45);
   color: #fff;
   background: rgba(255,255,255,.06);
   backdrop-filter: blur(8px);
@@ -172,11 +173,12 @@ input, select, textarea { font: inherit; }
 .btn--ghost {
   color: var(--color-text);
   background: var(--color-bg-subtle);
-  border-color: var(--color-border);
+  box-shadow: inset 0 0 0 1.5px var(--color-border);
 }
 .btn--ghost:hover {
-  background: var(--color-border);
-  border-color: transparent;
+  background: var(--color-bg);
+  box-shadow: inset 0 0 0 1.5px rgba(0,87,255,.25);
+  color: var(--color-primary);
 }
 
 .btn--white {
@@ -269,15 +271,21 @@ input, select, textarea { font: inherit; }
   gap: var(--space-6);
 }
 
+/* Default (dark hero) */
 .navbar__nav a {
   font-size: var(--text-sm);
   font-weight: 500;
-  color: var(--color-text-muted);
+  color: rgba(255,255,255,.7);
   transition: color var(--transition);
 }
-
-.navbar__nav a:hover { color: var(--color-text); }
+.navbar__nav a:hover { color: #fff; }
 .navbar__nav .btn { color: var(--color-primary); }
+
+/* After scroll (white bg) */
+.navbar.scrolled .navbar__nav a { color: var(--color-text-muted); }
+.navbar.scrolled .navbar__nav a:hover { color: var(--color-text); }
+.navbar.scrolled .navbar__burger span { background: var(--color-text); }
+
 
 .navbar__burger {
   display: none;
@@ -289,7 +297,7 @@ input, select, textarea { font: inherit; }
 .navbar__burger span {
   display: block;
   width: 22px; height: 2px;
-  background: var(--color-text);
+  background: #fff;
   border-radius: 2px;
   transition: transform 0.28s ease, opacity 0.2s ease;
   transform-origin: center;
@@ -519,9 +527,10 @@ input, select, textarea { font: inherit; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 15px 32px;
+  padding: 16px 32px;
   background: rgba(255,255,255,.08);
-  border: 1.5px solid rgba(255,255,255,.25);
+  box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.3);
+  border: none;
   color: rgba(255,255,255,.9);
   font-size: var(--text-base);
   font-weight: 600;
@@ -533,7 +542,7 @@ input, select, textarea { font: inherit; }
 }
 .btn--hero-ghost:hover {
   background: rgba(255,255,255,.15);
-  border-color: rgba(255,255,255,.5);
+  box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.6);
   transform: translateY(-1px);
 }
 .btn--hero-ghost:active { transform: translateY(0); }
@@ -911,7 +920,7 @@ input, select, textarea { font: inherit; }
 
 .process__steps {
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   gap: var(--space-4);
   justify-content: center;
 }
@@ -954,8 +963,10 @@ input, select, textarea { font: inherit; }
 .process-step__arrow {
   color: var(--color-primary);
   font-size: var(--text-2xl);
-  padding-top: var(--space-8);
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  opacity: 0.6;
 }
 
 /* ════════════════════════════════════════════════════
@@ -1003,6 +1014,7 @@ input, select, textarea { font: inherit; }
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 240px;
   gap: var(--space-4);
+  grid-auto-flow: dense;
 }
 
 .portfolio-item {

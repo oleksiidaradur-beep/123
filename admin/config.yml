@@ -45,6 +45,11 @@ collections:
                   - { label: "Bred (2×1)",            value: "wide"     }
                   - { label: "Høy (1×2)",             value: "tall"     }
                   - { label: "Feature/Stor (2×2)",    value: "feature"  }
+              - label: "Vis på forsiden"
+                name: showOnHome
+                widget: boolean
+                default: false
+                hint: "Vis dette prosjektet i portefølje-blokken på forsiden"
               - { label: "Prosjekttittel",  name: title,  widget: string }
               - { label: "Kundenavn",       name: client, widget: string }
               - { label: "Beskrivelse",     name: desc,   widget: text   }

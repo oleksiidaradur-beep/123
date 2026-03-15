@@ -150,7 +150,6 @@
   <section class="services" id="tjenester">
     <div class="container">
       <div class="section-header">
-        <span class="badge badge--accent">Steg 1 av 3 — Velg tjeneste</span>
         <h2>Hva trenger<br /><span class="gradient-text">du i dag?</span></h2>
         <p>Velg én eller flere tjenester, beregn pris og legg i kurven. Deretter sender du alt samlet som én forespørsel.</p>
       </div>
@@ -344,55 +343,8 @@
         <button class="filter-btn" data-filter="design">Grafisk design</button>
       </div>
 
-      <div class="portfolio__grid">
-        <div class="portfolio-item" data-category="skilt">
-          <div class="portfolio-item__img portfolio-item__img--1">
-            <div class="portfolio-item__overlay">
-              <span class="portfolio-item__tag">Skilt & storformat</span>
-              <h4>Fasadeskilt — Lokal bedrift</h4>
-            </div>
-          </div>
-        </div>
-        <div class="portfolio-item portfolio-item--wide" data-category="bil">
-          <div class="portfolio-item__img portfolio-item__img--2">
-            <div class="portfolio-item__overlay">
-              <span class="portfolio-item__tag">Bilfoliering</span>
-              <h4>Helbilfoliering — Firmabil</h4>
-            </div>
-          </div>
-        </div>
-        <div class="portfolio-item" data-category="design">
-          <div class="portfolio-item__img portfolio-item__img--3">
-            <div class="portfolio-item__overlay">
-              <span class="portfolio-item__tag">Grafisk design</span>
-              <h4>Logo og merkevare</h4>
-            </div>
-          </div>
-        </div>
-        <div class="portfolio-item" data-category="klaer">
-          <div class="portfolio-item__img portfolio-item__img--4">
-            <div class="portfolio-item__overlay">
-              <span class="portfolio-item__tag">Profilklær</span>
-              <h4>Arbeidstøy med logo</h4>
-            </div>
-          </div>
-        </div>
-        <div class="portfolio-item portfolio-item--wide" data-category="skilt">
-          <div class="portfolio-item__img portfolio-item__img--5">
-            <div class="portfolio-item__overlay">
-              <span class="portfolio-item__tag">Messeutstyr</span>
-              <h4>Komplett messestand</h4>
-            </div>
-          </div>
-        </div>
-        <div class="portfolio-item" data-category="design">
-          <div class="portfolio-item__img portfolio-item__img--6">
-            <div class="portfolio-item__overlay">
-              <span class="portfolio-item__tag">Trykksaker</span>
-              <h4>Brosjyre og visittkort</h4>
-            </div>
-          </div>
-        </div>
+      <div class="portfolio__grid" id="homePortfolioGrid">
+        <!-- Populated by home-portfolio.js from /data/portfolio.json (showOnHome: true) -->
       </div>
 
       <div class="portfolio__cta">
@@ -506,7 +458,6 @@
   <section class="order-summary" id="bestilling" style="display:none">
     <div class="container">
       <div class="section-header">
-        <span class="badge badge--accent">Steg 2 av 3 — Din kurv</span>
         <h2>Oversikt over<br /><span class="gradient-text">din bestilling</span></h2>
         <p>Se alle valgte tjenester og produkter med estimerte priser. Fjern eller endre det du ikke trenger.</p>
       </div>
@@ -559,7 +510,6 @@
     <div class="container contact__inner">
 
       <div class="contact__info">
-        <span class="badge badge--accent">Steg 3 av 3 — Send forespørsel</span>
         <h2>Fullfør din<br /><span class="gradient-text">forespørsel</span></h2>
         <p>Fyll inn kontaktinfo, så sender vi et konkret tilbud på alt du har valgt innen 2 arbeidstimer.</p>
 
@@ -921,5 +871,6 @@
   <script src="calculator.js"></script>
   <script src="catalog.js"></script>
   <script src="mockup.js"></script>
+  <script src="home-portfolio.js"></script>
 </body>
 </html>
