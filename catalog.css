@@ -790,27 +790,59 @@
 @media (max-width: 768px) {
   .catalog__grid { grid-template-columns: repeat(2, 1fr); }
 
-  .catalog__filter-row {
-    flex-direction: column;
-    align-items: flex-start;
+  /* Filter tabs — horizontal scroll instead of wrapping */
+  .filter-tabs,
+  .brand-pills {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
   }
+  .filter-tabs::-webkit-scrollbar,
+  .brand-pills::-webkit-scrollbar { display: none; }
+  .catalog__filter-row { flex-wrap: nowrap; align-items: flex-start; }
 
-  .modal--wide { max-width: 100%; }
+  /* Modal → bottom-sheet */
+  .modal-overlay { align-items: flex-end; padding: 0; }
+  .modal {
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    max-height: 92dvh;
+    transform: translateY(40px);
+  }
+  .modal-overlay--visible .modal { transform: translateY(0); }
+  .modal--wide { border-radius: 0; max-height: 100dvh; max-width: 100%; }
+
+  /* Calculator modal footer — stack buttons */
+  .modal__footer { flex-direction: column-reverse; gap: var(--space-2); }
+  .modal__footer .btn { width: 100%; justify-content: center; }
 
   .inquiry-drawer { width: 100%; max-width: 100%; right: -100%; }
 
   .calc-row { grid-template-columns: 1fr; }
 
-  .modal__body.mockup-layout {
-    grid-template-columns: 1fr;
-  }
+  .modal__body.mockup-layout { grid-template-columns: 1fr; }
+
+  /* iOS auto-zoom prevention (inputs must be ≥ 16px) */
+  .mockup-text-input, .text-options select { font-size: 16px; }
+
+  /* Touch targets */
+  .qty-btn { min-width: 44px; min-height: 44px; }
+  .garment-btn, .placement-btn { min-height: 40px; padding: var(--space-2) var(--space-4); }
+  .modal__close { width: 40px; height: 40px; font-size: 1.4rem; }
+  .inquiry-drawer__close { width: 40px; height: 40px; }
 }
 
 @media (max-width: 480px) {
-  .catalog__grid { grid-template-columns: 1fr; }
+  /* Keep 2 cols — cards are still useful at this size */
+  .catalog__grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-3); }
 
   .inquiry-fab {
     bottom: var(--space-4);
     right: var(--space-4);
   }
+}
+
+@media (max-width: 340px) {
+  .catalog__grid { grid-template-columns: 1fr; }
 }

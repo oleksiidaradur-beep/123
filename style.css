@@ -266,8 +266,12 @@ input, select, textarea { font: inherit; }
   width: 22px; height: 2px;
   background: var(--color-text);
   border-radius: 2px;
-  transition: all var(--transition);
+  transition: transform 0.28s ease, opacity 0.2s ease;
+  transform-origin: center;
 }
+.navbar__burger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.navbar__burger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.navbar__burger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ════════════════════════════════════════════════════
    HERO
@@ -1551,11 +1555,62 @@ input, select, textarea { font: inherit; }
   .cookie-banner__content { flex-direction: column; }
   .cookie-banner__actions { width: 100%; justify-content: stretch; }
   .cookie-banner__actions .btn { flex: 1; justify-content: center; }
+
+  /* Touch targets */
+  .navbar__burger { min-width: 44px; min-height: 44px; justify-content: center; }
+  .filter-btn { min-height: 44px; }
+  .global-cart-fab { width: 56px; height: 56px; }
+
+  /* Logo band — slower on mobile (battery) */
+  .logo-band__logos { animation-duration: 40s; }
+
+  /* Process — vertical timeline */
+  .process__steps {
+    padding-left: var(--space-10);
+    position: relative;
+    gap: 0;
+  }
+  .process__steps::before {
+    content: '';
+    position: absolute;
+    left: 18px; top: 20px; bottom: 20px;
+    width: 2px;
+    background: rgba(255,255,255,.12);
+  }
+  .process-step {
+    position: relative;
+    padding-bottom: var(--space-8);
+  }
+  .process-step:last-child { padding-bottom: 0; }
+  .process-step__number {
+    position: absolute;
+    left: calc(-1 * var(--space-10) - 2px);
+    top: 0;
+    font-size: var(--text-xl);
+  }
+
+  /* Why-us — clean testimonial stack */
+  .testimonial-stack { display: flex; flex-direction: column; gap: var(--space-4); }
+  .testimonial-card--secondary { margin-left: 0; }
 }
 
 @media (max-width: 480px) {
   .hero__stats { flex-wrap: wrap; gap: var(--space-4); }
   .stat-divider { display: none; }
+
+  /* Hero CTA — stack full-width */
+  .hero__actions { flex-direction: column; width: 100%; }
+  .btn--hero-primary,
+  .btn--hero-ghost { width: 100%; justify-content: center; }
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .logo-band__logos,
+  .hero__bg-orb,
+  .hero__float,
+  .hero__scroll-wheel,
+  .mockup-card { animation: none !important; }
 }
 
 /* ─── Scroll animation helpers ──────────────────── */

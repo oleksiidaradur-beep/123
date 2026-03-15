@@ -143,6 +143,16 @@
     if (e.key === 'ArrowRight' && lbIndex < filteredList.length - 1) { lbIndex++; showProject(filteredList[lbIndex]); }
   });
 
+  /* ─── Touch swipe for lightbox ──────────────────── */
+  let _swipeX = 0;
+  lbOverlay?.addEventListener('touchstart', e => { _swipeX = e.touches[0].clientX; }, { passive: true });
+  lbOverlay?.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - _swipeX;
+    if (Math.abs(dx) < 50) return;
+    if (dx < 0 && lbIndex < filteredList.length - 1) { lbIndex++; showProject(filteredList[lbIndex]); }
+    if (dx > 0 && lbIndex > 0)                       { lbIndex--; showProject(filteredList[lbIndex]); }
+  }, { passive: true });
+
   /* ─── Sticky filter bar shadow ─────────────────── */
   window.addEventListener('scroll', () => {
     const bar = document.getElementById('filterBar');
