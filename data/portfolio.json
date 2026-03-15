@@ -199,6 +199,7 @@
       "id": 22,
       "cat": "dekor",
       "size": "standard",
+      "showOnHome": true,
       "title": "Glassdekals — Showroom",
       "client": "Bilforhandler, Innlandet",
       "desc": "Frosted vinyl-folie med logomønster på alle glassfasader. Montert over helg uten driftsforstyrrelser.",
