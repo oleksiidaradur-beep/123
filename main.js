@@ -19,6 +19,7 @@
     const open = navMenu.classList.toggle('open');
     burger.classList.toggle('active', open);
     burger.setAttribute('aria-expanded', open);
+    navbar.classList.toggle('nav-open', open);
     document.body.style.overflow = open ? 'hidden' : '';
   });
 
@@ -27,6 +28,7 @@
     link.addEventListener('click', () => {
       navMenu.classList.remove('open');
       burger.classList.remove('active');
+      navbar.classList.remove('nav-open');
       document.body.style.overflow = '';
     });
   });

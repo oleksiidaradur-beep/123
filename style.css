@@ -76,6 +76,7 @@ body {
   background: var(--color-bg);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 img, svg { display: block; }
@@ -311,6 +312,8 @@ input, select, textarea { font: inherit; }
 ════════════════════════════════════════════════════ */
 /* ─── Hero dark variant ─────────────────────────── */
 .hero--dark {
+  position: relative;
+  overflow: hidden;
   background: #080a10;
   color: #fff;
 }
@@ -1613,6 +1616,11 @@ input, select, textarea { font: inherit; }
     z-index: 99;
   }
   .navbar__nav.open { display: flex; }
+  /* Disable backdrop-filter on navbar when menu is open —
+     backdrop-filter creates a containing block for fixed children,
+     causing the overlay to fill only the navbar instead of viewport */
+  .navbar:has(.navbar__nav.open),
+  .navbar.nav-open { backdrop-filter: none !important; }
   .navbar__nav a { font-size: var(--text-xl); font-weight: 600; color: var(--color-text); }
 
   /* Hero */
