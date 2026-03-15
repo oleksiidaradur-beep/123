@@ -1015,6 +1015,7 @@ input, select, textarea { font: inherit; }
 .portfolio__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 280px;
   gap: var(--space-4);
   grid-auto-flow: dense;
 }
@@ -1024,10 +1025,9 @@ input, select, textarea { font: inherit; }
   overflow: hidden;
   position: relative;
   cursor: pointer;
-  aspect-ratio: 4/3;
 }
 
-.portfolio-item--wide { grid-column: span 2; aspect-ratio: 16/7; }
+.portfolio-item--wide { grid-column: span 2; }
 
 .portfolio-item__img {
   width: 100%; height: 100%;
@@ -1642,7 +1642,7 @@ input, select, textarea { font: inherit; }
 
   /* Portfolio */
   .portfolio__grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-2); }
-  .portfolio-item--wide { grid-column: span 2; aspect-ratio: 16/7; }
+  .portfolio-item--wide { grid-column: span 2; }
 
   /* Why us */
   .why-us__inner { grid-template-columns: 1fr; }
@@ -1716,7 +1716,7 @@ input, select, textarea { font: inherit; }
 
   /* Portfolio grid — single column on very small screens */
   .portfolio__grid { grid-template-columns: 1fr; }
-  .portfolio-item--wide { grid-column: span 1; aspect-ratio: 4/3; }
+  .portfolio-item--wide { grid-column: span 1; }
 }
 
 /* Respect prefers-reduced-motion */
