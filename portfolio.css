@@ -7,6 +7,7 @@
 .navbar--scrolled .logo-name { color: var(--color-text); }
 .navbar--scrolled .navbar__nav a { color: var(--color-text-muted); }
 .navbar--scrolled .navbar__nav a:hover { color: var(--color-text); }
+.navbar--scrolled .navbar__burger span { background: var(--color-text); }
 
 .nav-active { color: var(--color-primary) !important; font-weight: 700 !important; }
 
@@ -508,8 +509,11 @@
   .pf-item__overlay { opacity: 1; }
 
   .lb-card { grid-template-columns: 1fr; max-height: 95vh; }
-  .lb-img-wrap { max-height: 45vh; }
+  .lb-img-wrap { max-height: 40vh; }
+  .lb-info { padding: var(--space-5); }
   .lb-nav { display: none; }
+  .lb-actions { flex-direction: column; gap: var(--space-3); }
+  .lb-actions .btn { width: 100%; justify-content: center; text-align: center; }
 
   .pf-cta__inner { flex-direction: column; text-align: center; }
   .pf-cta__actions { justify-content: center; }
