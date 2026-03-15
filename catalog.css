@@ -108,6 +108,7 @@
 }
 
 .modal__result {
+  margin: 0 var(--space-5);
   padding: var(--space-4) var(--space-5);
   background: var(--color-primary-light);
   border: 1px solid rgba(0,87,255,.2);
