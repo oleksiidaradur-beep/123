@@ -153,6 +153,17 @@
     if (dx > 0 && lbIndex > 0)                       { lbIndex--; showProject(filteredList[lbIndex]); }
   }, { passive: true });
 
+  /* ─── Sync filter bar top with navbar height ───── */
+  function syncFilterBarTop() {
+    const navbar = document.getElementById('navbar');
+    const bar = document.getElementById('filterBar');
+    if (navbar && bar) {
+      document.documentElement.style.setProperty('--navbar-h', navbar.offsetHeight + 'px');
+    }
+  }
+  syncFilterBarTop();
+  window.addEventListener('resize', syncFilterBarTop, { passive: true });
+
   /* ─── Sticky filter bar shadow ─────────────────── */
   window.addEventListener('scroll', () => {
     const bar = document.getElementById('filterBar');

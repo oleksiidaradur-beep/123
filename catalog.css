@@ -116,8 +116,14 @@
   display: flex;
   justify-content: flex-end;
   gap: var(--space-3);
-  padding: var(--space-5) var(--space-6);
+  padding: var(--space-4) var(--space-6);
   border-top: 1px solid var(--color-border);
+  flex-wrap: wrap;
+}
+
+.modal__footer .btn {
+  padding: 10px var(--space-5);
+  font-size: var(--text-sm);
 }
 
 /* ─── Calculator form fields ─────────────────────── */
@@ -152,6 +158,91 @@
 }
 
 .calc-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0,87,255,.1);
+}
+
+/* ─── Design file upload section ────────────────── */
+.calc-design-upload {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.calc-design-upload__label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.calc-design-upload__hint {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-top: -4px;
+}
+
+.calc-file-row {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.calc-file-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 8px var(--space-4);
+  border: 1.5px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-subtle);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+.calc-file-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+
+.calc-file-name {
+  font-size: var(--text-sm);
+  color: var(--color-primary);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+.calc-file-name .remove-file {
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 2px;
+}
+.calc-file-name .remove-file:hover { color: var(--color-accent); }
+
+.calc-link-input {
+  flex: 1;
+  min-width: 180px;
+  padding: 8px var(--space-3);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font: inherit;
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.calc-link-input:focus {
   outline: none;
   border-color: var(--color-primary);
   box-shadow: 0 0 0 3px rgba(0,87,255,.1);

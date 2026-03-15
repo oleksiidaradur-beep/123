@@ -244,6 +244,24 @@
     },
   };
 
+  /* ─── Design upload template ──────────────────── */
+  function designUploadHTML() {
+    return `
+      <div class="calc-design-upload">
+        <span class="calc-design-upload__label">Last opp design (valgfritt)</span>
+        <span class="calc-design-upload__hint">Last opp en fil eller lim inn en lenke til designet ditt</span>
+        <div class="calc-file-row">
+          <button type="button" class="calc-file-btn" id="c-design-file-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            Velg fil
+          </button>
+          <span class="calc-file-name" id="c-design-file-name" style="display:none"></span>
+          <input type="file" id="c-design-file" accept=".pdf,.png,.jpg,.jpeg,.svg,.ai,.eps,.psd" style="display:none">
+        </div>
+        <input type="text" class="calc-link-input" id="c-design-link" placeholder="Eller lim inn lenke til design (f.eks. Google Drive, Dropbox)...">
+      </div>`;
+  }
+
   /* ─── Helpers ──────────────────────────────────── */
   function v(id) {
     const el = document.getElementById(id);
@@ -300,8 +318,26 @@
     if (!cfg || !FORMS[service]) return;
 
     titleEl.textContent = cfg.title;
-    bodyEl.innerHTML = FORMS[service]();
+    bodyEl.innerHTML = FORMS[service]() + designUploadHTML();
     resultEl.style.display = 'none';
+
+    // Wire up file upload
+    const fileInput = document.getElementById('c-design-file');
+    const fileBtn   = document.getElementById('c-design-file-btn');
+    const fileName  = document.getElementById('c-design-file-name');
+    if (fileInput && fileBtn) {
+      fileBtn.addEventListener('click', () => fileInput.click());
+      fileInput.addEventListener('change', () => {
+        if (fileInput.files.length > 0) {
+          fileName.innerHTML = `<span>${fileInput.files[0].name}</span><button class="remove-file" title="Fjern">&times;</button>`;
+          fileName.style.display = 'flex';
+          fileName.querySelector('.remove-file').addEventListener('click', () => {
+            fileInput.value = '';
+            fileName.style.display = 'none';
+          });
+        }
+      });
+    }
 
     // Live recalculation on any input change
     bodyEl.addEventListener('input', recalc);
@@ -336,6 +372,10 @@
       const val = el.type === 'checkbox' ? (el.checked ? el.closest('label')?.textContent?.trim() : null) : el.options?.[el.selectedIndex]?.text || el.value;
       if (label && val) parts.push(`${label}: ${val}`);
     });
+    const designFile = document.getElementById('c-design-file');
+    if (designFile?.files?.length) parts.push(`Designfil: ${designFile.files[0].name}`);
+    const designLink = document.getElementById('c-design-link')?.value?.trim();
+    if (designLink) parts.push(`Designlenke: ${designLink}`);
     return parts.join(' · ') || PRICING[currentService]?.title || '';
   }
 
