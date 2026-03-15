@@ -137,7 +137,7 @@ input, select, textarea { font: inherit; }
 .btn--sm  { padding: 9px var(--space-4); font-size: var(--text-sm); }
 .btn--md  { padding: 11px var(--space-5); font-size: var(--text-base); }
 .btn--lg  { padding: 13px 28px; font-size: var(--text-base); border-radius: var(--radius-lg); }
-.btn--full { width: 100%; justify-content: center; }
+.btn--full { width: 100%; justify-content: center; white-space: normal; text-align: center; }
 
 .btn--primary {
   background: var(--gradient-primary);
