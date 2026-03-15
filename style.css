@@ -1362,6 +1362,8 @@ input, select, textarea { font: inherit; }
   border-radius: var(--radius-xl);
   padding: var(--space-8);
   box-shadow: 0 4px 24px rgba(0,0,0,.06), 0 1px 4px rgba(0,0,0,.04);
+  min-width: 0;
+  overflow: hidden;
 }
 
 .form-row {
@@ -1385,6 +1387,8 @@ input, select, textarea { font: inherit; }
 .form-group input,
 .form-group select,
 .form-group textarea {
+  width: 100%;
+  max-width: 100%;
   padding: 12px var(--space-4);
   border: 1.5px solid var(--color-border);
   border-radius: var(--radius-md);
@@ -1651,6 +1655,8 @@ input, select, textarea { font: inherit; }
   .contact__inner { grid-template-columns: 1fr; }
   .contact__info { position: static; }
   .form-row { grid-template-columns: 1fr; }
+  .contact__form { padding: var(--space-5); }
+  .contact { overflow: hidden; }
 
   /* Footer */
   .footer__inner { grid-template-columns: 1fr; gap: var(--space-8); }
